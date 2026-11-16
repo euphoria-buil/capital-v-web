@@ -1,0 +1,2145 @@
+
+/* CONFIGURACION GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* MENU */
+header {
+    background: #151923;
+    padding: 20px 7%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #aaa;
+}
+
+/* INICIO */
+
+/* FUENTE ESTILO WEST COAST */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@500;700&display=swap');
+
+/* PORTADA */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+/* FONDOS */
+.hero-slider,
+.slide {
+    position: absolute;
+    inset: 0;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1.05);
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* OSCURECIMIENTO */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.7)
+    );
+    z-index: 1;
+}
+
+/* CONTENIDO */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* TITULO GRAFFITI */
+.graffiti-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(55px, 10vw, 145px);
+    color: #d9a7ff;
+    letter-spacing: 3px;
+    transform: rotate(-3deg);
+
+    text-shadow:
+        3px 3px 0 #632f8d,
+        6px 6px 0 #36124f,
+        10px 12px 0 #160c24,
+        15px 18px 20px rgba(0,0,0,0.8);
+
+    margin-bottom: 0;
+}
+
+/* SUBTITULO */
+.roleplay-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(35px, 6vw, 80px);
+    letter-spacing: 12px;
+    color: white;
+
+    text-shadow:
+        4px 5px 0 #532b75,
+        8px 10px 15px black;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+/* BOTON */
+.hero .btn {
+    display: inline-block;
+    background: #9c59ce;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: #c17cf1;
+    transform: translateY(-3px);
+}
+
+/* INDICADORES */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #d9a7ff;
+    width: 30px;
+    border-radius: 10px;
+}
+
+/* MOVILES */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 480px;
+    }
+
+    .roleplay-title {
+        letter-spacing: 5px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        transition: none;
+    }
+}
+.btn {
+    display: inline-block;
+    background: white;
+    color: #151923;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* SECCIONES */
+.section {
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.section h2,
+.about h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+/* PRODUCTOS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.product-image {
+    height: 180px;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin-bottom: 15px;
+}
+
+.product button {
+    background: #151923;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* QUIENES SOMOS */
+.about {
+    background: #e9ebef;
+    text-align: center;
+    padding: 70px 15%;
+    line-height: 1.8;
+}
+
+/* CONTACTO */
+.contact {
+    background: white;
+}
+
+/* FOOTER */
+footer {
+    background: #151923;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ADAPTACION PARA MOVILES */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        padding: 50px 8%;
+    }
+}
+/* ABRIR AL ACERCAR EL RATON */
+.menu-lateral:hover,
+.menu-lateral:focus-within {
+    transform: translate(0, -50%);
+}
+
+/* FLECHA */
+.menu-flecha {
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 35px;
+    height: 70px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* ANIMACION DE LA FLECHA */
+.menu-flecha span {
+    transition: transform 0.45s ease;
+}
+
+.menu-lateral:hover .menu-flecha span,
+.menu-lateral:focus-within .menu-flecha span {
+    transform: rotate(180deg);
+}
+
+/* CONTENIDO */
+.menu-contenido {
+    width: 250px;
+    height: 100%;
+    padding: 25px 20px;
+    color: white;
+}
+
+.menu-contenido h2 {
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+.menu-contenido p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+/* ENLACES */
+.menu-contenido nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-contenido nav a {
+    color: #ddd;
+    text-decoration: none;
+
+    padding: 10px 12px;
+    border-radius: 5px;
+
+    transition: background 0.25s ease,
+                padding-left 0.25s ease;
+}
+
+.menu-contenido nav a:hover {
+    background: rgba(255,255,255,0.12);
+    padding-left: 20px;
+}
+
+/* INDICADORES NUEVOS */
+.slider-dots {
+    display: none;
+}
+
+.slider-progress {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    display: flex;
+    gap: 12px;
+}
+
+.progress-bar {
+    width: 75px;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: white;
+}
+
+.progress-bar.active span {
+    animation: fillProgress 6s linear forwards;
+}
+
+.progress-bar.completed span {
+    width: 100%;
+}
+
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* FONDO DIFUMINADO */
+body {
+    background: #11151c;
+    min-height: 100vh;
+}
+
+.fondo-difuminado {
+    position: fixed;
+    inset: -25px;
+    z-index: -1;
+
+    /* AQUI PONDRAS TU IMAGEN */
+    background-image: url("imagenes/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(14px) brightness(0.55);
+    pointer-events: none;
+}
+
+/* CONTENEDOR FLOTANTE */
+.pagina-flotante {
+    position: relative;
+
+    width: min(1200px, calc(100% - 100px));
+    margin: 45px auto;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: rgba(20, 24, 32, 0.93);
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,0.55),
+        0 0 35px rgba(0,0,0,0.2);
+}
+
+/* SECCIONES */
+.pagina-flotante .section,
+.pagina-flotante .about {
+    background: rgba(255,255,255,0.94);
+    color: #222;
+}
+
+/* MANTENER PORTADA DENTRO DEL CONTENEDOR */
+.pagina-flotante .hero {
+    width: 100%;
+}
+
+/* ADAPTACION MOVIL */
+@media (max-width: 768px) {
+    .pagina-flotante {
+        width: calc(100% - 36px);
+        margin: 18px auto;
+        border-radius: 12px;
+    }
+}
+
+/* ===================================
+   BARRA DE NAVEGACION FLOTANTE
+=================================== */
+
+.navbar-flotante {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+
+    transform: translate(-50%, -100px);
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 9000;
+
+    background: rgba(25, 29, 38, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+
+    padding: 15px 30px;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        visibility 0.4s;
+}
+
+/* CUANDO APARECE */
+.navbar-flotante.visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ENLACES */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+}
+
+/* MOVILES */
+@media (max-width: 768px) {
+    .navbar-flotante {
+        width: calc(100% - 40px);
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .navbar-links {
+        gap: 5px;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .navbar-links a {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* ===================================
+   PORTADA DINAMICA CON SCROLL
+=================================== */
+
+.hero {
+    position: relative;
+    transform-origin: center top;
+    will-change: transform;
+
+    transition: none;
+}
+
+/* MANTENER LAS IMAGENES AJUSTADAS */
+.hero-slider {
+    overflow: hidden;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+}
+
+/* MOVIMIENTO SUAVE DE LAS IMAGENES */
+.slide.active {
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.06;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide.active {
+        animation: none;
+    }
+}
+
+/* ====================================
+   COMO JUGAR EN EUPHORYA ROLEPLAY
+==================================== */
+
+.como-jugar {
+    padding: 85px 35px;
+    background: #101013;
+    color: white;
+}
+
+.tutorial-encabezado {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.tutorial-encabezado h2 {
+    font-size: clamp(26px, 4vw, 40px);
+    margin-bottom: 12px;
+}
+
+.tutorial-encabezado p {
+    color: #a5a5ae;
+    font-size: 16px;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* TARJETAS */
+.tutorial-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 530px;
+    padding: 30px 25px 25px;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        160deg,
+        #222225,
+        #111113
+    );
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* AMPLIAR TARJETA */
+.tutorial-card:hover {
+    transform: translateY(-12px) scale(1.035);
+
+    box-shadow: 0 25px 45px rgba(0,0,0,0.45);
+
+    border-color: rgba(255,255,255,0.25);
+
+    z-index: 2;
+}
+
+/* VARIACIONES */
+.card-fivem {
+    background: linear-gradient(
+        160deg,
+        #23171d,
+        #401b2c 60%,
+        #141014
+    );
+}
+
+.card-servidor {
+    background: linear-gradient(
+        160deg,
+        #222225,
+        #121214
+    );
+}
+
+/* TITULOS */
+.tutorial-titulo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.numero-paso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.tutorial-titulo h3 {
+    font-size: clamp(19px, 2vw, 27px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.tutorial-descripcion {
+    color: #d2d2d6;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+/* PLATAFORMAS */
+.plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.plataformas span {
+    background: rgba(255,255,255,0.08);
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* BOTONES */
+.tutorial-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    padding: 14px 22px;
+    border-radius: 12px;
+
+    background: #ffca05;
+    color: #171717;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+a.tutorial-boton:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255,202,5,0.35);
+    filter: brightness(1.1);
+}
+
+.tutorial-boton-inactivo {
+    opacity: 0.65;
+    cursor: default;
+}
+
+/* IMAGENES */
+.tutorial-imagen {
+    flex: 1;
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 0;
+}
+
+.tutorial-imagen img {
+    display: block;
+    max-width: 100%;
+    max-height: 230px;
+    object-fit: contain;
+
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.5));
+
+    transition: transform 0.4s ease;
+}
+
+.tutorial-card:hover .tutorial-imagen img {
+    transform: scale(1.07);
+}
+
+/* BARRA DE CARGA */
+.tutorial-footer {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.tutorial-footer > span {
+    display: block;
+    color: #a4a4ad;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.tutorial-loading {
+    height: 9px;
+    width: 100%;
+
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tutorial-loading-fill {
+    width: 0;
+    height: 100%;
+
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+/* CARGAR CUANDO PASAS EL RATON */
+.tutorial-card:hover .tutorial-loading-fill {
+    animation: cargaGTA 3s linear forwards;
+}
+
+@keyframes cargaGTA {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin: auto;
+    }
+
+    .tutorial-card {
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 600px) {
+    .como-jugar {
+        padding: 55px 18px;
+    }
+
+    .tutorial-card {
+        padding: 25px 20px;
+    }
+
+    .tutorial-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tutorial-card,
+    .tutorial-imagen img,
+    .tutorial-boton {
+        transition: none;
+    }
+
+    .tutorial-card:hover .tutorial-loading-fill {
+        animation: none;
+        width: 100%;
+    }
+}
+
+/* =====================================
+   FOOTER EUPHORYA ROLEPLAY
+===================================== */
+
+.footer-euphorya {
+    background: #171b23;
+    color: white;
+    text-align: center;
+    padding: 55px 20px 25px;
+}
+
+.footer-euphorya h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.footer-descripcion {
+    color: #aeb4bf;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* REDES SOCIALES */
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.red-social {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 13px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.red-social:hover {
+    transform: translateY(-8px) scale(1.12);
+
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* EFECTO AL HACER CLIC */
+.red-social:active {
+    transform: scale(0.95);
+}
+
+.footer-linea {
+    width: 80%;
+    max-width: 700px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.12);
+    margin: 0 auto 25px;
+}
+
+.copyright {
+    color: #838b98;
+    font-size: 12px;
+}
+
+/* =====================================
+   BOTON VOLVER ARRIBA
+===================================== */
+
+.volver-arriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+
+    background: rgba(25,29,38,0.85);
+    backdrop-filter: blur(12px);
+
+    color: white;
+    font-size: 23px;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s,
+        background 0.35s ease;
+}
+
+/* MOSTRAR BOTON */
+.volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* EFECTO AL PASAR EL RATON */
+.volver-arriba:hover {
+    background: rgba(70,78,95,0.95);
+    transform: translateY(-6px) scale(1.08);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* EFECTO AL HACER CLIC */
+.volver-arriba:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .volver-arriba {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .red-social,
+    .volver-arriba {
+        transition: none;
+    }
+}
+
+/* ====================================
+   CUENTA EUPHORYA ROLEPLAY
+==================================== */
+
+/* BOTON SUPERIOR DERECHO */
+.boton-cuenta {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    z-index: 9500;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #ffca05;
+    color: #171717;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.boton-cuenta:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(255,202,5,0.25);
+    filter: brightness(1.08);
+}
+
+/* FONDO OSCURECIDO */
+.cuenta-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.cuenta-overlay[hidden],
+.cuenta-form[hidden] {
+    display: none !important;
+}
+
+/* VENTANA */
+.cuenta-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: #20242c;
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+
+    animation: aparecerCuenta 0.35s ease;
+}
+
+@keyframes aparecerCuenta {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* CERRAR */
+.cerrar-cuenta {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    border: none;
+    background: transparent;
+    color: #b5bac4;
+
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.cerrar-cuenta:hover {
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* ENCABEZADO */
+.cuenta-modal h2 {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.cuenta-subtitulo {
+    color: #aeb4bf;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+/* PESTAÑAS */
+.cuenta-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+
+    padding: 5px;
+    background: #15191f;
+    border-radius: 12px;
+}
+
+.cuenta-tab {
+    flex: 1;
+    border: none;
+    border-radius: 9px;
+
+    padding: 12px 8px;
+
+    background: transparent;
+    color: #aeb4bf;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cuenta-tab.activo {
+    background: #ffca05;
+    color: #171717;
+}
+
+.cuenta-tab:not(.activo):hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+/* FORMULARIOS */
+.cuenta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.cuenta-form label {
+    color: #d8dbe1;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.cuenta-form input {
+    width: 100%;
+    padding: 13px 15px;
+
+    background: #15191f;
+    color: white;
+
+    border: 1px solid #3c4350;
+    border-radius: 9px;
+
+    font-size: 14px;
+    outline: none;
+
+    transition: border-color 0.3s,
+                box-shadow 0.3s;
+}
+
+.cuenta-form input:focus {
+    border-color: #ffca05;
+    box-shadow: 0 0 0 3px rgba(255,202,5,0.12);
+}
+
+/* BOTON ENVIAR */
+.cuenta-submit {
+    margin-top: 12px;
+    padding: 14px;
+
+    background: #ffca05;
+    color: #171717;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.cuenta-submit:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+}
+
+/* MENSAJES */
+.cuenta-mensaje {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+    color: #f3c96a;
+}
+
+.cuenta-mensaje:empty {
+    display: none;
+}
+
+/* MOVILES */
+@media (max-width: 768px) {
+    .boton-cuenta {
+        top: 12px;
+        right: 12px;
+        padding: 11px 14px;
+    }
+
+    .cuenta-modal {
+        padding: 28px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cuenta-modal {
+        animation: none;
+    }
+
+    .boton-cuenta,
+    .cuenta-submit,
+    .cuenta-tab {
+        transition: none;
+    }
+}
+
+/* CONTADOR EUPHORYA */
+
+.contador-euphorya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    width: 100%;
+    min-height: 130px;
+    padding: 20px;
+
+    background: #080808;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* ESPACIO PARA EL LOGO */
+.contador-logo {
+    width: 90px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+/* CIRCULO EXTERIOR */
+.contador-indicador {
+    --color-estado: rgb(255, 209, 45);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    background: color-mix(
+        in srgb,
+        var(--color-estado) 25%,
+        transparent
+    );
+
+    transition: background 1.5s ease;
+}
+
+/* PUNTO INTERIOR */
+.contador-punto {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+
+    background: var(--color-estado);
+
+    animation: parpadeo 2s infinite;
+
+    transition: background 1.5s ease;
+}
+
+/* ANIMACION DEL PUNTO */
+@keyframes parpadeo {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 8px var(--color-estado);
+    }
+
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 18px var(--color-estado);
+    }
+}
+
+/* NUMERO DE JUGADORES */
+.contador-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#jugadoresOnline {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.contador-texto {
+    font-size: 22px;
+}
+
+
+/* CONTADOR FLOTANTE IZQUIERDO */
+
+.contador-euphorya {
+    position: fixed;
+
+
+/* ESQUINA SUPERIOR IZQUIERDA */
+left: 20px;
+top: 20px;
+transform: none;
+
+    /* Tamaño reducido */
+    width: 145px;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 12px;
+
+    background: rgba(8, 8, 8, 0.90);
+    color: white;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+    box-sizing: border-box;
+
+    /* Por encima de la página */
+    z-index: 900;
+
+    opacity: 1;
+
+    transition: opacity 0.15s linear;
+}
+
+/* LOGO PEQUEÑO */
+.contador-logo {
+    width: 25px;
+    height: 35px;
+    flex-shrink: 0;
+}
+
+/* NUMERO MAS PEQUEÑO */
+#jugadoresOnline {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* TEXTO ONLINE */
+.contador-texto {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* CONTADOR EN MOVILES */
+@media (max-width: 600px) {
+    .contador-euphorya {
+        width: 125px;
+        min-height: 70px;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .contador-logo {
+        width: 18px;
+        height: 28px;
+    }
+
+    #jugadoresOnline {
+        font-size: 19px;
+    }
+
+    .contador-texto {
+        font-size: 11px;
+    }
+}
+
+/* ==========================================
+   RULETA 3D EUPHORYA ROLEPLAY
+========================================== */
+
+.euphorya-info {
+    width: 100%;
+    padding: 80px 35px;
+    background: #101115;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* TITULO DE LA SECCION */
+
+.euphorya-encabezado {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.euphorya-encabezado h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.euphorya-encabezado p {
+    font-size: 21px;
+    color: #aeb0b8;
+}
+
+/* DISTRIBUCION */
+
+.euphorya-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 30px;
+}
+
+/* ZONA DE RULETA */
+
+.ruleta-zona {
+    min-width: 0;
+}
+
+.ruleta-escenario {
+    position: relative;
+    width: 100%;
+    height: 350px;
+
+    perspective: 1000px;
+    overflow: hidden;
+
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.ruleta-escenario.arrastrando {
+    cursor: grabbing;
+}
+
+/* FOTOGRAFIAS */
+
+.ruleta-carta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 56%;
+    height: 280px;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    background: #252525;
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+
+    transform-style: preserve-3d;
+    will-change: transform, opacity, filter;
+
+    pointer-events: none;
+}
+
+.ruleta-carta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* INSTRUCCION */
+
+.ruleta-instruccion {
+    text-align: center;
+    color: #a5a7ae;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* INDICADORES */
+
+.ruleta-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.ruleta-indicador {
+    width: 7px;
+    height: 5px;
+    border-radius: 10px;
+    background: #555861;
+    transition: all 0.35s ease;
+}
+
+.ruleta-indicador.activo {
+    width: 25px;
+    background: #d5a93d;
+}
+
+/* CUADRO DE DESCRIPCION */
+
+.ruleta-informacion {
+    min-height: 270px;
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #1c1e25;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+
+    box-sizing: border-box;
+}
+
+.ruleta-etiqueta {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d5a93d;
+    margin-bottom: 20px;
+}
+
+.ruleta-informacion h3 {
+    font-size: 29px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.ruleta-informacion p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #bfc1c9;
+}
+
+/* LOGOS FUTUROS */
+
+.euphorya-logos {
+    min-height: 60px;
+    margin-top: 35px;
+}
+
+/* VERSION MOVIL */
+
+@media (max-width: 750px) {
+
+    .euphorya-info {
+        padding: 55px 18px;
+    }
+
+    .euphorya-contenido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .euphorya-encabezado h2 {
+        font-size: 26px;
+    }
+
+    .ruleta-escenario {
+        height: 300px;
+    }
+
+    .ruleta-carta {
+        height: 235px;
+    }
+
+    .ruleta-informacion {
+        min-height: 200px;
+        padding: 25px;
+    }
+
+    .ruleta-informacion h3 {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ruleta-carta {
+        will-change: auto;
+    }
+}
+
+/* ==================================
+   SEPARADOR ANIMADO EUPHORYA
+================================== */
+
+.separador-euphorya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    width: min(75%, 800px);
+    margin: 0 auto;
+    padding: 30px 0;
+
+    background: transparent;
+}
+
+/* LINEAS DORADAS */
+.separador-linea {
+    flex: 1;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d5a93d,
+        transparent
+    );
+
+    box-shadow: 0 0 10px rgba(213,169,61,0.3);
+
+    transform: scaleX(0);
+    opacity: 0;
+
+    transition:
+        transform 1.2s ease,
+        opacity 1.2s ease;
+}
+
+/* ROMBO CENTRAL */
+.separador-rombo {
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid #d5a93d;
+
+    transform: rotate(45deg) scale(0.5);
+    opacity: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 15px rgba(213,169,61,0.2);
+
+    transition:
+        transform 0.8s ease 0.3s,
+        opacity 0.8s ease 0.3s;
+}
+
+/* ROMBO INTERIOR */
+.separador-rombo span {
+    width: 7px;
+    height: 7px;
+    background: #d5a93d;
+}
+
+/* ACTIVAR ANIMACION */
+.separador-euphorya.visible .separador-linea {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.separador-euphorya.visible .separador-rombo {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+}
+
+/* MOVILES */
+@media (max-width: 600px) {
+    .separador-euphorya {
+        width: 85%;
+        gap: 15px;
+        padding: 22px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .separador-euphorya .separador-linea {
+        transition: none;
+    }
+
+    .separador-euphorya .separador-rombo {
+        transition: none;
+    }
+}
+
+/* =====================================
+   NAVBAR FIJA Y TRANSPARENTE
+===================================== */
+
+.navbar-flotante {
+    position: fixed !important;
+
+    top: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow: none !important;
+    border: none !important;
+
+    z-index: 2000 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ENLACES DE NAVEGACION */
+
+.navbar-flotante a {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    transition: color 0.3s ease;
+}
+
+.navbar-flotante a:hover {
+    color: #d5a93d;
+}
+
+/* =====================================
+   PORTADA A PANTALLA COMPLETA
+===================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    height: 100svh;
+    min-height: 100svh;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+/* LAS IMAGENES OCUPAN TODA LA PORTADA */
+
+.hero .slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* EVITAR QUE EL SIGUIENTE TITULO
+   APAREZCA SOBRE LA PORTADA */
+
+.euphorya-info {
+    position: relative;
+}
+
+/* AJUSTAR CONTADOR DE JUGADORES */
+
+.contador-indicador {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+.contador-punto {
+    position: relative !important;
+    left: -5px !important;
+}
+
+.contador-jugadores {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.contador-online {
+    display: inline !important;
+    white-space: nowrap !important;
+}
+
+/* =====================================
+   CONTADOR ONLINE HORIZONTAL
+===================================== */
+
+/* CONTENEDOR PRINCIPAL */
+.contador-euphorya {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+}
+
+/* PUNTO DE ESTADO */
+.contador-indicador {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0;
+    margin-left: -5px;
+}
+
+/* NUMERO Y ONLINE EN UNA FILA */
+.contador-datos {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 5px !important;
+    white-space: nowrap;
+}
+
+/* NUMERO */
+#jugadoresOnline {
+    display: inline-block !important;
+    line-height: 1 !important;
+}
+
+/* TEXTO ONLINE */
+.contador-texto {
+    display: inline-block !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+}
+
+/* CENTRAR CONTENIDO DEL CONTADOR */
+
+.contador-euphorya {
+    justify-content: center !important;
+    gap: 10px !important;
+}
+
+/* ELIMINAR ESPACIO DEL LOGO VACIO */
+.contador-logo {
+    display: none !important;
+}
+
+/* POSICION DEL PUNTO */
+.contador-indicador {
+    margin-left: 0 !important;
+    transform: none !important;
+}
+
+/* NUMERO Y ONLINE */
+.contador-datos {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin: 0 !important;
+}
+
+/* ======================================
+   NAVBAR TRANSPARENTE EN LA PORTADA
+   Y OSCURA EN LAS DEMAS SECCIONES
+====================================== */
+
+/* ESTADO INICIAL: TRANSPARENTE */
+.navbar-flotante {
+    background: transparent !important;
+    background-color: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+
+    transition:
+        background 0.4s ease,
+        backdrop-filter 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease !important;
+}
+
+/* CUANDO SALIMOS DE LA PORTADA */
+.navbar-flotante.navbar-oscura {
+    background: rgba(15, 16, 22, 0.88) !important;
+    background-color: rgba(15, 16, 22, 0.88) !important;
+
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* BOTÓN FLOTANTE DEL FORO */
+
+a.boton-foro {
+    position: fixed !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 30px !important;
+    left: 30px !important;
+
+    z-index: 9999;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 36px;
+    margin: 0;
+
+    background: #8e52bc;
+    color: white;
+
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: background 0.3s, transform 0.3s;
+}
+
+a.boton-foro:hover {
+    background: #a66bd4;
+    transform: translateY(-3px);
+}
+
+
+.contador-euphorya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 190px;
+    height: 52px;
+    min-height: 0;
+    padding: 8px 14px;
+    box-sizing: border-box;
+
+    background: #1b1012;
+    border-radius: 15px;
+}
+
+
+/* ELIMINAR ESPACIO DEL LOGO VACÍO */
+
+.contador-euphorya .contador-logo {
+    display: none;
+}
+
+
+/* INDICADOR ONLINE - CÍRCULOS CENTRADOS */
+
+.contador-euphorya .contador-indicador {
+    position: relative !important;
+    display: block !important;
+
+width: 34px !important;
+height: 34px !important;
+min-width: 34px !important;
+flex: 0 0 34px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: rgba(255, 218, 50, 0.16) !important;
+    box-shadow: none !important;
+
+    transform: none !important;
+}
+
+/* OCULTAMOS EL PUNTO ANTERIOR */
+
+.contador-euphorya .contador-punto {
+    display: none !important;
+}
+
+/* NUEVO PUNTO PERFECTAMENTE CENTRADO */
+
+.contador-euphorya .contador-indicador::after {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 19px;
+height: 19px;
+
+    border-radius: 50%;
+    background: #ffda32;
+
+    box-shadow: 0 0 15px rgba(255, 218, 50, 0.45);
+}
+
+
+
+

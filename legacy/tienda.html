@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Euphoria Roleplay</title>
+    <link rel="stylesheet" href="tienda.css">
+    <script src="tienda.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        EUPHORIA <span>ROLEPLAY</span>
+    </a>
+
+    <nav class="navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html" class="activo">Tienda</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="index.html#normativas">Normativas</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <button class="boton-cuenta" id="abrirLogin">
+        Mi cuenta
+    </button>
+</header>
+
+<main>
+
+    <section class="hero">
+        <span class="etiqueta">EUPHORIA ROLEPLAY</span>
+        <h1>TIENDA <span>OFICIAL</span></h1>
+        <p>
+            Descubre nuestras membresías y personaliza
+            tu experiencia dentro de nuestra comunidad.
+        </p>
+
+        <a href="#membresias" class="boton-explorar">
+            Explorar membresías
+        </a>
+    </section>
+
+    <section class="seccion-tienda" id="membresias">
+
+        <div class="titulo-seccion">
+            <span>BENEFICIOS EXCLUSIVOS</span>
+            <h2>Nuestras membresías</h2>
+            <p>
+                Elige la membresía que más te guste.
+                Puedes adquirirla por 30 días o en
+                modalidad permanente.
+            </p>
+        </div>
+
+        <div class="contenedor-planes">
+
+            <!-- COBRE -->
+            <article class="tarjeta-plan cobre">
+
+                <div class="icono-plan">
+                    <span>🥉</span>
+                </div>
+
+                <h3>COBRE</h3>
+                <p class="subtitulo-plan">
+                    Tu primera experiencia VIP
+                </p>
+
+                <div class="selector-duracion">
+                    <button class="duracion activo"
+                        data-plan="cobre"
+                        data-tipo="mensual">
+                        30 días
+                    </button>
+                    <button class="duracion"
+                        data-plan="cobre"
+                        data-tipo="permanente">
+                        Permanente
+                    </button>
+                </div>
+
+                <div class="precio">
+                    <span class="simbolo">$</span>
+                    <strong id="precio-cobre">4.99</strong>
+                    <small id="periodo-cobre">/ 30 días</small>
+                </div>
+
+                <ul class="beneficios">
+                    <li>Insignia Cobre exclusiva</li>
+                    <li>Canal exclusivo de comunidad</li>
+                    <li>Conjunto de ropa cosmética</li>
+                    <li>Eventos para miembros</li>
+                </ul>
+
+                <button class="comprar"
+                    data-producto="Cobre">
+                    Comprar Cobre
+                </button>
+            </article>
+
+            <!-- ORO -->
+            <article class="tarjeta-plan oro">
+
+                <div class="etiqueta-popular">
+                    DESTACADO
+                </div>
+
+                <div class="icono-plan">
+                    <span>👑</span>
+                </div>
+
+                <h3>ORO</h3>
+                <p class="subtitulo-plan">
+                    Más personalización y exclusividad
+                </p>
+
+                <div class="selector-duracion">
+                    <button class="duracion activo"
+                        data-plan="oro"
+                        data-tipo="mensual">
+                        30 días
+                    </button>
+                    <button class="duracion"
+                        data-plan="oro"
+                        data-tipo="permanente">
+                        Permanente
+                    </button>
+                </div>
+
+                <div class="precio">
+                    <span class="simbolo">$</span>
+                    <strong id="precio-oro">9.99</strong>
+                    <small id="periodo-oro">/ 30 días</small>
+                </div>
+
+                <ul class="beneficios">
+                    <li>Todos los beneficios Cobre</li>
+                    <li>Insignia Oro exclusiva</li>
+                    <li>Dos conjuntos cosméticos adicionales</li>
+                    <li>Personalización visual de vehículos</li>
+                    <li>Eventos especiales</li>
+                </ul>
+
+                <button class="comprar"
+                    data-producto="Oro">
+                    Comprar Oro
+                </button>
+            </article>
+
+            <!-- DIAMANTE -->
+            <article class="tarjeta-plan diamante">
+
+                <div class="icono-plan">
+                    <span>💎</span>
+                </div>
+
+                <h3>DIAMANTE</h3>
+                <p class="subtitulo-plan">
+                    La experiencia más exclusiva
+                </p>
+
+                <div class="selector-duracion">
+                    <button class="duracion activo"
+                        data-plan="diamante"
+                        data-tipo="mensual">
+                        30 días
+                    </button>
+                    <button class="duracion"
+                        data-plan="diamante"
+                        data-tipo="permanente">
+                        Permanente
+                    </button>
+                </div>
+
+                <div class="precio">
+                    <span class="simbolo">$</span>
+                    <strong id="precio-diamante">19.99</strong>
+                    <small id="periodo-diamante">/ 30 días</small>
+                </div>
+
+                <ul class="beneficios">
+                    <li>Todos los beneficios Oro y Cobre</li>
+                    <li>Insignia Diamante exclusiva</li>
+                    <li>Colección cosmética exclusiva</li>
+                    <li>Personalizaciones visuales adicionales</li>
+                    <li>Eventos VIP especiales</li>
+                </ul>
+
+                <button class="comprar"
+                    data-producto="Diamante">
+                    Comprar Diamante
+                </button>
+            </article>
+
+        </div>
+
+        <p class="aviso-productos">
+            Los productos y beneficios están sujetos a
+            disponibilidad y a las normas de monetización
+            aplicables al servidor.
+        </p>
+
+    </section>
+
+    <!-- MONEDAS OBTENIBLES JUGANDO -->
+    <section class="seccion-monedas">
+
+        <div class="titulo-seccion">
+            <span>ECONOMÍA DEL SERVIDOR</span>
+            <h2>Monedas EuphorIa</h2>
+            <p>
+                Estas monedas te permitiran comprar objetos
+                exclusivos dentro del juego.
+            </p>
+        </div>
+
+        <div class="contenedor-monedas">
+
+            <div class="tarjeta-moneda">
+                <div class="moneda-icono">🪙</div>
+                <h3>500</h3>
+                <p>Monedas virtuales</p>
+                <span>Obtenibles jugando</span>
+            </div>
+
+            <div class="tarjeta-moneda">
+                <div class="moneda-icono">🪙</div>
+                <h3>1.200</h3>
+                <p>Monedas virtuales</p>
+                <span>Obtenibles jugando</span>
+            </div>
+
+            <div class="tarjeta-moneda">
+                <div class="moneda-icono">🪙</div>
+                <h3>3.000</h3>
+                <p>Monedas virtuales</p>
+                <span>Obtenibles jugando</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <h3>EUPHORIA ROLEPLAY</h3>
+    <p>Una nueva experiencia de Roleplay.</p>
+    <small>
+        © 2026 Euphorya Roleplay.
+        Todos los derechos reservados.
+    </small>
+</footer>
+
+<!-- VENTANA DE INICIO DE SESIÓN -->
+<div class="modal-fondo" id="modalLogin" aria-hidden="true">
+
+    <div class="modal-login"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tituloLogin">
+
+        <button class="cerrar-modal"
+            id="cerrarLogin"
+            aria-label="Cerrar aviso">
+            &times;
+        </button>
+
+        <div class="modal-icono">🔒</div>
+
+        <h2 id="tituloLogin">
+            Inicia sesión
+        </h2>
+
+        <p>
+            Para realizar compras en la tienda
+            de Euphoria Roleplay, primero debes
+            iniciar sesión en tu cuenta.
+        </p>
+
+        <button class="boton-login" id="irLogin">
+            Iniciar sesión
+        </button>
+
+        <button class="boton-visitante" id="verTienda">
+            Continuar como visitante
+        </button>
+
+        <small>
+            Puedes explorar los productos sin
+            iniciar sesión, pero no comprarlos.
+        </small>
+
+    </div>
+
+</div>
+
+<!-- ======================================
+     MODAL DE ACCESO A EUPHORYA
+====================================== -->
+
+<div class="modal-fondo" id="modalAcceso" aria-hidden="true">
+
+    <div class="modal-login modal-acceso"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="tituloAcceso">
+
+        <button class="cerrar-modal"
+                id="cerrarAcceso"
+                aria-label="Cerrar formulario">
+            &times;
+        </button>
+
+        <div class="modal-icono">👤</div>
+
+        <h2 id="tituloAcceso">Bienvenido a Euphoria</h2>
+
+        <p>
+            Inicia sesión para acceder a tu cuenta
+            y gestionar tus membresías.
+        </p>
+
+        <form id="formLogin">
+
+            <div class="campo-acceso">
+                <label for="loginEmail">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="correo@ejemplo.com"
+                    autocomplete="email"
+                    required>
+            </div>
+
+            <div class="campo-acceso">
+                <label for="loginPassword">Contraseña</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Tu contraseña"
+                    autocomplete="current-password"
+                    required>
+            </div>
+
+            <button type="submit" class="boton-login">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <button class="enlace-acceso" id="olvidoPassword">
+            ¿Olvidaste tu contraseña?
+        </button>
+
+        <div class="separador-acceso"></div>
+
+        <p class="texto-registro">
+            ¿No tienes una cuenta?
+        </p>
+
+        <button class="boton-visitante" id="abrirRegistro">
+            Crear una cuenta
+        </button>
+
+        <p class="mensaje-acceso" id="mensajeLogin"
+           role="status"></p>
+
+    </div>
+
+</div>
+
+<!-- ======================================
+     MODAL DE REGISTRO
+====================================== -->
+
+<div class="modal-fondo" id="modalRegistro" aria-hidden="true">
+
+    <div class="modal-login modal-acceso"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="tituloRegistro">
+
+        <button class="cerrar-modal"
+                id="cerrarRegistro"
+                aria-label="Cerrar registro">
+            &times;
+        </button>
+
+        <div class="modal-icono">✨</div>
+
+        <h2 id="tituloRegistro">Crear cuenta</h2>
+
+        <p>Únete a la comunidad de Euphoria Roleplay.</p>
+
+        <form id="formRegistro">
+
+            <div class="campo-acceso">
+                <label for="registroNombre">Nombre de usuario</label>
+                <input
+                    type="text"
+                    id="registroNombre"
+                    placeholder="Tu nombre de usuario"
+                    autocomplete="username"
+                    minlength="3"
+                    maxlength="24"
+                    required>
+            </div>
+
+            <div class="campo-acceso">
+                <label for="registroEmail">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="registroEmail"
+                    placeholder="correo@ejemplo.com"
+                    autocomplete="email"
+                    required>
+            </div>
+<div class="campo-acceso">
+    <label for="registroPassword">
+        Contraseña
+    </label>
+
+    <input
+        type="password"
+        id="registroPassword"
+        placeholder="Crea una contraseña segura"
+        autocomplete="new-password"
+        minlength="8"
+        aria-describedby="requisitosPassword"
+        required>
+
+    <div class="requisitos-password" id="requisitosPassword">
+
+        <p class="requisitos-titulo">
+            Tu contraseña debe cumplir obligatoriamente:
+        </p>
+
+        <div class="requisito" id="reqLongitud">
+            ✖ Mínimo 8 caracteres
+        </div>
+
+        <div class="requisito" id="reqMayuscula">
+            ✖ Iniciar con una letra mayúscula
+        </div>
+
+        <div class="requisito" id="reqNumero">
+            ✖ Contener al menos un número
+        </div>
+
+        <div class="requisito" id="reqEspecial">
+            ✖ Contener un carácter especial
+        </div>
+
+        <p class="estado-password"
+           id="estadoPassword"
+           role="status"
+           aria-live="polite">
+        </p>
+
+    </div>
+</div>
+
+
+            <button type="submit" class="boton-login">
+                Crear cuenta
+            </button>
+
+        </form>
+
+        <button class="enlace-acceso" id="volverLogin">
+            Ya tengo una cuenta
+        </button>
+
+        <p class="mensaje-acceso" id="mensajeRegistro"
+           role="status"></p>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

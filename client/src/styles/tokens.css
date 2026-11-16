@@ -1,0 +1,39 @@
+/* Capital V — paleta (fondos más claros, marca morado + dorado) */
+:root {
+  --bg-deep: #262838;
+  --bg: #2e3040;
+  --bg-elevated: #383a4c;
+  --bg-card: #404255;
+  --bg-card-2: #4d4460;
+  --bg-surface: #3a3c4e;
+
+  --brand: #9455c5;
+  --brand-hover: #ac6cdb;
+  --brand-deep: #8156a5;
+  --brand-light: #e0bdf9;
+  --brand-glow: rgba(172, 108, 219, 0.35);
+
+  --accent: #ffca05;
+  --accent-hover: #ffe566;
+  --accent-text: #171717;
+  --accent-2: #632f8d;
+
+  --text: #f8f6fc;
+  --text-muted: #c5c3d0;
+  --text-subtle: #9d9aaa;
+
+  --border: #a56ed4;
+  --border-soft: rgba(208, 155, 245, 0.28);
+  --border-ui: #52546a;
+
+  --success: #2dc653;
+  --danger: #ef476f;
+  --warning: #ffca05;
+
+  --shadow: 0 14px 40px rgba(20, 16, 32, 0.35);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --header-h: 64px;
+  --font-display: "Oswald", sans-serif;
+  --font-graffiti: "Permanent Marker", cursive;
+}

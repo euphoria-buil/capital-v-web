@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: capital-v-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: capitalv
+      POSTGRES_PASSWORD: capitalv_dev
+      POSTGRES_DB: capitalv
+    ports:
+      - "55432:5432"
+    volumes:
+      - capitalv_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U capitalv -d capitalv"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  capitalv_pgdata:

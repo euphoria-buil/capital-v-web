@@ -1,0 +1,231 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.62rem 1.05rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  background: linear-gradient(120deg, var(--accent), var(--accent-hover));
+  color: var(--accent-text);
+  transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+  box-shadow: 0 8px 24px rgba(255, 202, 5, 0.22);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn.sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.card {
+  background: linear-gradient(120deg, var(--bg-card-2), var(--bg-elevated));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow);
+}
+
+.card.flat {
+  background: rgba(52, 54, 70, 0.85);
+  box-shadow: none;
+}
+
+.card.interactive {
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card.interactive:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.page-header {
+  margin-bottom: 1.25rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+}
+
+.badge.dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+}
+
+.role-USER {
+  color: #a0aec0;
+}
+.role-SUPPORT {
+  color: #63b3ed;
+}
+.role-ADMIN {
+  color: #f6ad55;
+}
+.role-OWNER {
+  color: #f687b3;
+}
+
+.status-OPEN {
+  color: var(--warning);
+}
+.status-IN_REVIEW {
+  color: #63b3ed;
+}
+.status-RESOLVED {
+  color: var(--success);
+}
+.status-REJECTED {
+  color: var(--danger);
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+}
+
+.alert.error {
+  background: rgba(239, 71, 111, 0.12);
+  border: 1px solid rgba(239, 71, 111, 0.45);
+}
+
+.alert.ok {
+  background: rgba(45, 198, 83, 0.1);
+  border: 1px solid rgba(45, 198, 83, 0.4);
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.form-stack label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.form-stack input,
+.form-stack select,
+.form-stack textarea {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: rgba(46, 48, 64, 0.75);
+  color: var(--text);
+  padding: 0.62rem 0.75rem;
+  font: inherit;
+}
+
+.form-stack input:focus,
+.form-stack select:focus,
+.form-stack textarea:focus {
+  outline: 2px solid var(--brand-glow);
+  border-color: var(--brand);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.data th,
+table.data td {
+  text-align: left;
+  padding: 0.7rem 0.55rem;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+table.data th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+}
+
+.loading-block {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.breadcrumbs {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumbs a:hover {
+  color: var(--brand-light);
+}

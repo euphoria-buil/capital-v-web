@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+<body>
+    <div class="fondo-difuminado"></div>
+
+
+<!-- BARRA DE NAVEGACION FLOTANTE -->
+<header class="navbar-flotante" id="navbarFlotante">
+
+    <nav class="navbar-links">
+        <a href="#inicio">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="#normativas">Normativas</a>
+        <a href="#contacto">Contacto</a>
+        
+    </nav>
+
+</header>
+
+
+<!-- BOTON DE CUENTA -->
+<button class="boton-cuenta" id="abrirCuenta" type="button">
+    <i class="fa-solid fa-user"></i>
+    Mi cuenta
+</button>
+
+<!-- VENTANA DE REGISTRO Y LOGIN -->
+<div class="cuenta-overlay" id="cuentaOverlay" hidden>
+
+    <div class="cuenta-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="tituloCuenta">
+
+        <button class="cerrar-cuenta"
+                id="cerrarCuenta"
+                type="button"
+                aria-label="Cerrar ventana">
+            &times;
+        </button>
+
+        <h2 id="tituloCuenta">CAPITAL V</h2>
+        <p class="cuenta-subtitulo">Bienvenido a Euphoria Roleplay</p>
+
+        <!-- PESTAÑAS -->
+        <div class="cuenta-tabs">
+            <button class="cuenta-tab activo"
+                    data-tab="login"
+                    type="button">
+                Iniciar sesión
+            </button>
+
+            <button class="cuenta-tab"
+                    data-tab="registro"
+                    type="button">
+                Registrarse
+            </button>
+        </div>
+
+        <!-- FORMULARIO LOGIN -->
+        <form id="formLogin" class="cuenta-form">
+
+            <label for="loginEmail">Correo electrónico</label>
+            <input id="loginEmail"
+                   type="email"
+                   placeholder="correo@ejemplo.com"
+                   autocomplete="email"
+                   required>
+
+            <label for="loginPassword">Contraseña</label>
+            <input id="loginPassword"
+                   type="password"
+                   placeholder="Tu contraseña"
+                   autocomplete="current-password"
+                   required>
+
+            <button type="submit" class="cuenta-submit">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <!-- FORMULARIO REGISTRO -->
+        <form id="formRegistro"
+              class="cuenta-form"
+              hidden>
+
+            <label for="registroUsuario">Nombre de usuario</label>
+            <input id="registroUsuario"
+                   type="text"
+                   placeholder="Tu nombre de usuario"
+                   autocomplete="username"
+                   minlength="3"
+                   maxlength="24"
+                   required>
+
+            <label for="registroEmail">Correo electrónico</label>
+            <input id="registroEmail"
+                   type="email"
+                   placeholder="correo@ejemplo.com"
+                   autocomplete="email"
+                   required>
+
+            <label for="registroPassword">Contraseña</label>
+            <input id="registroPassword"
+                   type="password"
+                   placeholder="Mínimo 8 caracteres"
+                   autocomplete="new-password"
+                   minlength="8"
+                   required>
+
+            <label for="registroConfirmar">Confirmar contraseña</label>
+            <input id="registroConfirmar"
+                   type="password"
+                   placeholder="Repite tu contraseña"
+                   autocomplete="new-password"
+                   minlength="8"
+                   required>
+
+            <button type="submit" class="cuenta-submit">
+                Crear cuenta
+            </button>
+
+        </form>
+
+        <p id="cuentaMensaje"
+           class="cuenta-mensaje"
+           role="status"
+           aria-live="polite"></p>
+
+    </div>
+
+</div>
+
+<!-- PORTADA EUPHORYA ROLEPLAY -->
+<section id="inicio" class="hero">
+
+    <!-- IMAGENES DE FONDO -->
+    <div class="hero-slider">
+        <div class="slide active"
+             style="background-image: url('imagenes/portada1.jpg');">
+        </div>
+
+        <div class="slide"
+             style="background-image: url('imagenes/portada2.jpg');">
+        </div>
+
+        <div class="slide"
+             style="background-image: url('imagenes/portada3.jpg');">
+        </div>
+    </div>
+
+    <!-- CAPA OSCURA -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENIDO -->
+    <div class="hero-content">
+        <h1 class="graffiti-title">CAPITAL V</h1>
+        <h2 class="roleplay-title">ROLEPLAY</h2>
+
+        <p>Tu historia comienza aquí</p>
+
+        <a href="#nosotros" class="btn">
+            DESCUBRE EUPHORIA
+        </a>
+    </div>
+    
+    <!-- INDICADORES DE PROGRESO -->
+<div class="slider-progress">
+    <div class="progress-bar active">
+        <span></span>
+    </div>
+
+    <div class="progress-bar">
+        <span></span>
+    </div>
+
+    <div class="progress-bar">
+        <span></span>
+    </div>
+</div>
+</section>
+
+<!-- ==================================
+     RULETA 3D EUPHORYA ROLEPLAY
+=================================== -->
+
+<section id="euphorya-info" class="euphorya-info">
+
+    <div class="euphorya-encabezado">
+        <h2>¿QUÉ ES EUPHORIA RP?</h2>
+        <p>Crea tu propio imperio</p>
+    </div>
+
+    <div class="euphorya-contenido">
+
+        <!-- RULETA DE FOTOGRAFIAS -->
+        <div class="ruleta-zona">
+
+            <div
+                class="ruleta-escenario"
+                id="ruletaEscenario"
+                aria-label="Arrastra para girar las imágenes"
+            >
+
+                <div class="ruleta-carta">
+                    <img src="imagenes/carta1.jpg" alt="Ciudad">
+                </div>
+
+                <div class="ruleta-carta">
+                    <img src="imagenes/carta2.jpg" alt="Negocios">
+                </div>
+
+                <div class="ruleta-carta">
+                    <img src="imagenes/carta3.jpg" alt="Historias">
+                </div>
+
+                <div class="ruleta-carta">
+                    <img src="imagenes/carta4.jpg" alt="Vehículos">
+                </div>
+
+                <div class="ruleta-carta">
+                    <img src="imagenes/carta5.jpg" alt="Comunidad">
+                </div>
+
+            </div>
+
+            <p class="ruleta-instruccion">
+                Arrastra las imágenes para explorar
+            </p>
+
+            <div class="ruleta-indicadores" id="ruletaIndicadores"></div>
+
+        </div>
+
+        <!-- DESCRIPCION DE LA IMAGEN -->
+        <div class="ruleta-informacion">
+
+            <span class="ruleta-etiqueta">
+                EUPHORIA ROLEPLAY
+            </span>
+
+            <h3 id="ruletaTitulo">
+                Crea tu propio imperio
+            </h3>
+
+            <p id="ruletaDescripcion">
+                Construye tu historia en Euphoria Roleplay.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ESPACIO PARA FUTUROS LOGOS -->
+    <div class="euphorya-logos"></div>
+
+</section>
+
+<!-- SEPARADOR ANIMADO EUPHORYA -->
+<div class="separador-euphorya" aria-hidden="true">
+
+    <div class="separador-linea"></div>
+
+    <div class="separador-rombo">
+        <span></span>
+    </div>
+
+    <div class="separador-linea"></div>
+
+</div>
+
+
+<!-- COMO JUGAR EN EUPHORYA -->
+<section id="como-jugar" class="como-jugar">
+
+    <div class="tutorial-encabezado">
+        <h2>¿CÓMO JUGAR EN EUPHORIA?</h2>
+        <p>
+            Sigue estos tres sencillos pasos
+            y comienza tu historia en Los Santos.
+        </p>
+    </div>
+
+    <div class="tutorial-grid">
+
+        <!-- PASO 1 -->
+        <article class="tutorial-card card-gta">
+
+            <div class="tutorial-titulo">
+                <span class="numero-paso">1</span>
+                <h3>Instalar el<br>juego GTA V</h3>
+            </div>
+
+            <p class="tutorial-descripcion">
+                Compra e instala una copia original
+                de Grand Theft Auto V en tu PC.
+            </p>
+
+            <div class="plataformas">
+                <span>Steam</span>
+                <span>Epic Games</span>
+                <span>Rockstar</span>
+            </div>
+
+            <div class="tutorial-imagen">
+                <img src="imagenes/gta-logo.png"
+                     alt="Grand Theft Auto V">
+            </div>
+
+            <div class="tutorial-footer">
+                <span>Cargando...</span>
+                <div class="tutorial-loading">
+                    <div class="tutorial-loading-fill"></div>
+                </div>
+            </div>
+
+        </article>
+
+        <!-- PASO 2 -->
+        <article class="tutorial-card card-fivem">
+
+            <div class="tutorial-titulo">
+                <span class="numero-paso">2</span>
+                <h3>Instalar<br>FiveM</h3>
+            </div>
+
+            <p class="tutorial-descripcion">
+                Descarga e instala FiveM desde
+                su página oficial. Es completamente
+                gratuito.
+            </p>
+
+            <a class="tutorial-boton"
+               href="https://fivem.net/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Descargar FiveM
+            </a>
+
+            <div class="tutorial-imagen">
+                <img src="imagenes/fivem.png"
+                     alt="FiveM">
+            </div>
+
+            <div class="tutorial-footer">
+                <span>Instalando FiveM...</span>
+                <div class="tutorial-loading">
+                    <div class="tutorial-loading-fill"></div>
+                </div>
+            </div>
+
+        </article>
+
+        <!-- PASO 3 -->
+        <article class="tutorial-card card-servidor">
+
+            <div class="tutorial-titulo">
+                <span class="numero-paso">3</span>
+                <h3>Únete a<br>Euphoria Roleplay</h3>
+            </div>
+
+            <p class="tutorial-descripcion">
+                Abre FiveM, busca Euphoria Roleplay
+                en la lista de servidores y comienza
+                tu aventura.
+            </p>
+
+            <span class="tutorial-boton tutorial-boton-inactivo">
+                Próximamente
+            </span>
+
+            <div class="tutorial-imagen">
+                <img src="imagenes/lossantos-mapa.png"
+                     alt="Mapa de Los Santos">
+            </div>
+
+            <div class="tutorial-footer">
+                <span>Conectando al servidor...</span>
+                <div class="tutorial-loading">
+                    <div class="tutorial-loading-fill"></div>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+</section>
+
+<!-- PIE DE PAGINA -->
+<footer class="footer-euphorya">
+
+    <h2>EUPHORIA ROLEPLAY</h2>
+
+    <p class="footer-descripcion">
+        Síguenos en nuestras redes sociales
+    </p>
+
+    <div class="redes-sociales">
+
+        <!-- DISCORD -->
+        <a href="https://discord.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="red-social"
+           aria-label="Discord"
+           title="Discord">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="red-social"
+           aria-label="Instagram"
+           title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- TIKTOK -->
+        <a href="https://tiktok.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="red-social"
+           aria-label="TikTok"
+           title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <!-- YOUTUBE -->
+        <a href="https://youtube.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="red-social"
+           aria-label="YouTube"
+           title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <!-- X -->
+        <a href="https://x.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="red-social"
+           aria-label="X"
+           title="X">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-linea"></div>
+
+    <p class="copyright">
+        © 2026 Euphoria Roleplay.
+        Todos los derechos reservados.
+    </p>
+
+</footer>
+    </main>
+
+<!-- BOTON VOLVER ARRIBA -->
+<button id="volverArriba"
+        class="volver-arriba"
+        type="button"
+        aria-label="Volver al inicio"
+        title="Volver al inicio">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+<script src="script.js"></script>
+
+<!-- FIN DE LA PAGINA FLOTANTE -->
+</main>
+
+<!-- CONTADOR FIJO A LA IZQUIERDA -->
+<section class="contador-euphorya">
+
+    <div class="contador-logo"></div>
+
+    <div class="contador-indicador">
+        <span class="contador-punto"></span>
+    </div>
+
+    <div class="contador-datos">
+        <span id="jugadoresOnline">75</span>
+        <span class="contador-texto">ONLINE</span>
+    </div>
+
+</section>
+
+
+<!-- Otros elementos flotantes existentes -->
+
+<script src="script.js"></script>
+    <!-- BOTÓN FLOTANTE DEL FORO -->
+    <a href="foro.html" class="boton-foro">
+        💬 Ir al foro
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "capital-v-web",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "setup:server": "npm --prefix server install && npm --prefix server run db:generate",
+    "setup:client": "npm --prefix client install",
+    "migrate": "npm --prefix server run db:migrate",
+    "seed": "npm --prefix server run db:seed"
+  }
+}

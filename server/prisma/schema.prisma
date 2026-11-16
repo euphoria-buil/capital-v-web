@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum WebRole {
+  USER
+  SUPPORT
+  ADMIN
+  OWNER
+}
+
+enum ReportStatus {
+  OPEN
+  IN_REVIEW
+  RESOLVED
+  REJECTED
+}
+
+enum ReportType {
+  PLAYER
+  APPEAL
+  BUG
+  OTHER
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  username     String   @unique
+  passwordHash String
+  role         WebRole  @default(USER)
+  banned       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  threads       ForumThread[]
+  posts         ForumPost[]
+  reports       Report[]        @relation("ReportAuthor")
+  assignedReports Report[]      @relation("ReportAssignee")
+  auditLogs     AuditLog[]
+}
+
+model Permission {
+  id          String           @id @default(cuid())
+  key         String           @unique
+  label       String
+  description String?
+  roles       RolePermission[]
+}
+
+model RolePermission {
+  role         WebRole
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([role, permissionId])
+}
+
+model ForumCategory {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  title       String
+  description String
+  icon        String          @default("💬")
+  sortOrder   Int             @default(0)
+  subforums   ForumSubforum[]
+}
+
+model ForumSubforum {
+  id          String        @id @default(cuid())
+  slug        String
+  title       String
+  description String
+  icon        String        @default("📁")
+  categoryId  String
+  category    ForumCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  threads     ForumThread[]
+
+  @@unique([categoryId, slug])
+}
+
+model ForumThread {
+  id          String        @id @default(cuid())
+  title       String
+  pinned      Boolean       @default(false)
+  locked      Boolean       @default(false)
+  subforumId  String
+  subforum    ForumSubforum @relation(fields: [subforumId], references: [id], onDelete: Cascade)
+  authorId    String
+  author      User          @relation(fields: [authorId], references: [id])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  posts       ForumPost[]
+}
+
+model ForumPost {
+  id        String      @id @default(cuid())
+  content   String
+  threadId  String
+  thread    ForumThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User        @relation(fields: [authorId], references: [id])
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model Report {
+  id           String       @id @default(cuid())
+  type         ReportType
+  title        String
+  description  String
+  status       ReportStatus @default(OPEN)
+  evidenceUrl  String?
+  authorId     String
+  author       User         @relation("ReportAuthor", fields: [authorId], references: [id])
+  assigneeId   String?
+  assignee     User?        @relation("ReportAssignee", fields: [assigneeId], references: [id])
+  staffNotes   String?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model ShopPack {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  priceCents  Int
+  currency    String   @default("EUR")
+  featured    Boolean  @default(false)
+  active      Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  meta      Json?
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}

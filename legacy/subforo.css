@@ -1,0 +1,609 @@
+
+/* ======================================
+   SUBFOROS EUPHORYA ROLEPLAY
+====================================== */
+
+.subforo-contenedor {
+    width: min(1200px, calc(100% - 40px));
+    margin: 45px auto 90px;
+}
+
+/* NAVEGACION */
+
+.subforo-ruta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    color: #aaa5b5;
+    font-size: 13px;
+}
+
+.subforo-ruta a {
+    color: #c8b2d8;
+    text-decoration: none;
+}
+
+.subforo-ruta a:hover {
+    color: #d5a0f7;
+}
+
+.subforo-volver {
+    padding: 11px 17px;
+    border: 1px solid #674b7d;
+    border-radius: 10px;
+    color: #d5a0f7;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* PORTADA */
+
+.subforo-portada {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 45px;
+    border-radius: 20px;
+
+    background: linear-gradient(120deg, #352044, #191b25);
+    border: 1px solid #493453;
+}
+
+.subforo-portada-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 85px;
+    height: 85px;
+    border-radius: 17px;
+
+    background: #30283b;
+    font-size: 40px;
+}
+
+.subforo-etiqueta {
+    color: #d5a0f7;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.subforo-portada h1 {
+    margin: 12px 0;
+    font-size: clamp(25px, 4vw, 38px);
+    color: white;
+}
+
+.subforo-portada p {
+    color: #c4bdcd;
+    font-size: 14px;
+}
+
+/* PANEL */
+
+.subforo-panel {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 18px;
+
+    background: #1b1c23;
+    border: 1px solid #30303b;
+}
+
+.subforo-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.subforo-cabecera h2 {
+    font-size: 22px;
+    color: white;
+}
+
+.subforo-cabecera p {
+    margin-top: 7px;
+    color: #a7a7b2;
+    font-size: 13px;
+}
+
+/* BOTON CREAR */
+
+.subforo-crear {
+    padding: 13px 22px;
+    background: #9455c5;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.subforo-crear:hover:not(:disabled) {
+    background: #ad6edb;
+    transform: translateY(-2px);
+}
+
+.subforo-crear:disabled {
+    background: #403648;
+    color: #aaa0b3;
+    cursor: not-allowed;
+}
+
+/* BUSCADOR */
+
+.subforo-herramientas {
+    display: flex;
+    gap: 12px;
+    margin: 28px 0 20px;
+}
+
+.subforo-herramientas input,
+.subforo-herramientas select {
+    padding: 13px;
+    background: #252630;
+    color: white;
+
+    border: 1px solid #3a3a46;
+    border-radius: 9px;
+    outline: none;
+}
+
+.subforo-herramientas input {
+    flex: 1;
+    min-width: 0;
+}
+
+.subforo-herramientas input:focus {
+    border-color: #a66ed2;
+}
+
+/* LISTA DE TEMAS */
+
+.subforo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.subforo-tema {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 22px;
+    border-radius: 13px;
+
+    background: #252630;
+    border: 1px solid #343540;
+
+    transition: 0.3s ease;
+    animation: temaEntrada 0.35s ease both;
+}
+
+.subforo-tema:hover {
+    background: #302b3a;
+    border-color: #9455c5;
+}
+
+.subforo-tema-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+    background: #352b41;
+    font-size: 23px;
+}
+
+.subforo-tema-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.subforo-tema-info h3 {
+    color: white;
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+.subforo-tema-info p {
+    color: #aaa6b4;
+    font-size: 12px;
+}
+
+.subforo-tema-etiqueta {
+    display: inline-block;
+    padding: 5px 9px;
+
+    background: #43314f;
+    color: #dcb4f5;
+    border-radius: 6px;
+
+    font-size: 10px;
+}
+
+.subforo-tema-flecha {
+    font-size: 25px;
+    color: #c99beb;
+}
+
+.subforo-vacio {
+    padding: 35px;
+    text-align: center;
+    color: #aaa6b4;
+}
+
+.subforo-vacio[hidden] {
+    display: none;
+}
+
+.subforo-aviso {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 10px;
+
+    background: #27232d;
+    border: 1px solid #403548;
+
+    color: #d5bfdc;
+    font-size: 13px;
+}
+
+@keyframes temaEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    .subforo-contenedor {
+        width: calc(100% - 24px);
+    }
+
+    .subforo-portada {
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .subforo-panel {
+        padding: 18px;
+    }
+
+    .subforo-cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .subforo-herramientas {
+        flex-direction: column;
+    }
+
+    .subforo-tema {
+        padding: 16px;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .subforo-tema {
+        animation: none;
+    }
+}
+
+/* FORMULARIO Y LECTURA DE TEMAS */
+
+#panelCrearTema[hidden],
+#panelLeerTema[hidden] {
+    display: none !important;
+}
+
+#panelCrearTema h2,
+#panelLeerTema h2 {
+    color: white;
+    margin-bottom: 18px;
+}
+
+#formularioTema {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+#formularioTema label {
+    color: #d5c7df;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#formularioTema input,
+#formularioTema select,
+#formularioTema textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #3a3a46;
+    border-radius: 10px;
+    background: #252630;
+    color: white;
+    font: inherit;
+    outline: none;
+}
+
+#formularioTema input:focus,
+#formularioTema select:focus,
+#formularioTema textarea:focus {
+    border-color: #a66ed2;
+}
+
+.subforo-acciones {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.subforo-cancelar {
+    padding: 12px 18px;
+    border: 1px solid #51445e;
+    border-radius: 10px;
+    background: #302a39;
+    color: #eee;
+    cursor: pointer;
+}
+
+.subforo-texto-ayuda {
+    color: #aaa6b4;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.subforo-contenido {
+    color: #e5dfea;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    padding: 24px;
+    margin-top: 20px;
+    background: #252630;
+    border: 1px solid #383442;
+    border-radius: 12px;
+}
+
+.subforo-tema:focus-visible {
+    outline: 2px solid #d5a0f7;
+    outline-offset: 3px;
+}
+
+/* LISTA DE PUBLICACIONES */
+
+#listaTemas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-tema {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    background: #24242e;
+    border: 1px solid #383442;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tarjeta-tema:hover {
+    background: #30283c;
+    border-color: #9c62c7;
+}
+
+.tarjeta-tema:focus-visible {
+    outline: 2px solid #b780e0;
+    outline-offset: 3px;
+}
+
+/* AVATAR A LA IZQUIERDA */
+
+.avatar-tema {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    background: #483458;
+    border: 1px solid #77538f;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.avatar-tema img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFORMACIÓN */
+
+.informacion-tema {
+    flex: 1;
+    min-width: 0;
+}
+
+.informacion-tema h3 {
+    margin: 0 0 7px;
+    color: white;
+    font-size: 17px;
+}
+
+.informacion-tema p {
+    margin: 0 0 10px;
+    color: #b5aebf;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.detalles-tema {
+    color: #a77bc7;
+    font-size: 12px;
+}
+
+.flecha-tema {
+    margin-left: auto;
+    font-size: 26px;
+    color: #c998eb;
+}
+
+/* PAGINACIÓN */
+
+.paginacion-temas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.resumen-paginas {
+    color: #aaa4b4;
+    font-size: 13px;
+}
+
+.controles-paginas {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.boton-pagina {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #51405e;
+    border-radius: 9px;
+    background: #292532;
+    color: white;
+    cursor: pointer;
+}
+
+.boton-pagina:hover:not(:disabled) {
+    background: #40304f;
+}
+
+.boton-pagina.activo {
+    background: #8e52bc;
+    border-color: #8e52bc;
+}
+
+.boton-pagina:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    .tarjeta-tema {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .avatar-tema {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .paginacion-temas {
+        justify-content: center;
+    }
+}
+
+/* FECHA Y HORA DE PUBLICACIÓN */
+
+.fecha-publicacion {
+    display: block;
+    margin-top: 6px;
+    color: #898391;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* ACCIONES DEL PROPIETARIO */
+
+.acciones-propietario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.boton-editar-tema,
+.boton-eliminar-tema {
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.boton-editar-tema {
+    background: #8e52bc;
+    color: white;
+    border: 1px solid #a66bd4;
+}
+
+.boton-editar-tema:hover {
+    background: #a66bd4;
+}
+
+.boton-eliminar-tema {
+    background: #392127;
+    color: #ffb3b3;
+    border: 1px solid #74404b;
+}
+
+.boton-eliminar-tema:hover {
+    background: #572c35;
+}
+
+@media (max-width: 600px) {
+    .acciones-propietario {
+        flex-direction: column;
+    }
+}

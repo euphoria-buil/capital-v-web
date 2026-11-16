@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro | Euphorya Roleplay</title>
+
+    <link rel="stylesheet" href="foro.css">
+
+    <style>
+        /* Estilos complementarios de esta versión */
+
+        .euphorya-foro {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 80px;
+            color: #f5f1fa;
+        }
+
+        .euphorya-foro .foro-bienvenida {
+            padding: 40px;
+            border-radius: 18px;
+            background: linear-gradient(120deg, #382348, #1c1c27);
+            border: 1px solid #503b61;
+            margin-bottom: 35px;
+        }
+
+        .euphorya-foro .foro-bienvenida h1 {
+            font-size: clamp(26px, 4vw, 38px);
+            margin-bottom: 12px;
+        }
+
+        .euphorya-foro .foro-bienvenida p {
+            color: #c9c0d0;
+        }
+
+        .euphorya-foro .foro-categorias h2 {
+            margin-bottom: 20px;
+        }
+
+        .euphorya-foro .foro-lista-categorias {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .euphorya-foro .foro-categoria {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-align: left;
+            padding: 23px;
+            border: 1px solid #383442;
+            border-radius: 14px;
+            background: #24242e;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            font: inherit;
+            transition: background .2s, border-color .2s;
+        }
+
+        .euphorya-foro .foro-categoria:hover {
+            background: #30283c;
+            border-color: #9c62c7;
+        }
+
+        .euphorya-foro .categoria-icono {
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .euphorya-foro .foro-categoria h3 {
+            font-size: 16px;
+            margin: 0 0 6px;
+        }
+
+        .euphorya-foro .foro-categoria p {
+            font-size: 12px;
+            color: #aaa4b4;
+            margin: 0;
+        }
+
+        .euphorya-foro .categoria-flecha {
+            margin-left: auto;
+            color: #c998eb;
+            font-size: 22px;
+            transition: transform .2s;
+        }
+
+        .euphorya-foro .foro-grupo.abierto
+        .categoria-flecha {
+            transform: rotate(90deg);
+        }
+
+        .euphorya-foro .foro-subcategorias {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            padding: 12px 8px 0;
+        }
+
+        .euphorya-foro .foro-subcategorias[hidden] {
+            display: none;
+        }
+
+        .euphorya-foro .foro-subcategoria {
+            display: block;
+            padding: 13px 17px;
+            background: #292532;
+            color: #d9c8e6;
+            border: 1px solid #41364c;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .euphorya-foro .foro-subcategoria:hover {
+            background: #40304f;
+        }
+
+        .euphorya-foro .foro-buscador {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #45404f;
+            background: #252530;
+            color: white;
+            outline: none;
+        }
+
+        .euphorya-foro .foro-buscador:focus {
+            border-color: #a56ad1;
+        }
+
+        .euphorya-foro .foro-seccion {
+            margin-bottom: 35px;
+        }
+
+        .euphorya-foro .foro-seccion h2 {
+            margin-bottom: 18px;
+        }
+
+        .euphorya-foro .foro-sin-resultados {
+            color: #b8b1c1;
+            padding: 20px;
+        }
+
+        .foro-usuario {
+            position: relative;
+        }
+
+        .foro-usuario > button {
+            background: #8e52bc;
+            color: white;
+            border: 0;
+            border-radius: 10px;
+            padding: 11px 15px;
+            cursor: pointer;
+        }
+
+        .foro-menu-usuario {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            z-index: 20;
+            width: 190px;
+            padding: 8px;
+            background: #25232e;
+            border: 1px solid #51405e;
+            border-radius: 12px;
+        }
+
+        .foro-menu-usuario[hidden],
+        #usuarioBoton[hidden],
+        #botonLogin[hidden] {
+            display: none;
+        }
+
+        .foro-menu-usuario a,
+        .foro-menu-usuario button {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            color: #eee;
+            background: none;
+            border: 0;
+            text-align: left;
+            text-decoration: none;
+            cursor: pointer;
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .foro-menu-usuario a:hover,
+        .foro-menu-usuario button:hover {
+            background: #40304f;
+        }
+
+        @media (max-width: 750px) {
+            .euphorya-foro .foro-lista-categorias {
+                grid-template-columns: 1fr;
+            }
+
+            .euphorya-foro .foro-bienvenida {
+                padding: 25px;
+            }
+
+            .foro-header {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header class="foro-header">
+
+        <a href="foro.html" class="foro-logo">
+            <span>EUPHORIA</span>
+            <small>Foro de la Comunidad</small>
+        </a>
+
+        <nav class="foro-nav">
+            <a href="index.html">Página principal</a>
+            <a href="foro.html">Inicio</a>
+            <a href="#categorias">Categorías</a>
+        </nav>
+
+        <div class="foro-usuario">
+
+            <button id="botonLogin" type="button">
+                Iniciar sesión
+            </button>
+
+
+<button id="usuarioBoton"
+        class="usuario-boton-perfil"
+        type="button"
+        aria-expanded="false"
+        aria-controls="usuarioDesplegable"
+        hidden>
+
+    <span class="usuario-datos">
+        <span id="nombreUsuario">Usuario</span>
+        <small>Miembro</small>
+    </span>
+
+    <span class="usuario-avatar">
+        <svg viewBox="0 0 24 24"
+             width="27"
+             height="27"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+        </svg>
+    </span>
+
+</button>
+
+
+            <div id="usuarioDesplegable"
+                 class="foro-menu-usuario" hidden>
+
+                <a href="#" data-pendiente>Mi perfil</a>
+                <a href="#" data-pendiente>Configuración</a>
+                <a href="#" data-pendiente>Notificaciones</a>
+                <a href="#" data-pendiente>Mis publicaciones</a>
+
+                <button id="botonLogout" type="button">
+                    Cerrar sesión
+                </button>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main class="euphorya-foro">
+
+        <!-- BIENVENIDA -->
+
+        <section class="foro-bienvenida">
+
+            <h1>Euphoria Roleplay</h1>
+
+            <p>
+                Te damos la bienvenida al foro oficial de Euphoria RP
+            </p>
+
+        </section>
+
+        <!-- CATEGORIAS -->
+
+        <section class="foro-categorias" id="categorias">
+
+            <h2>Explorar categorías</h2>
+
+            <input
+                type="search"
+                id="buscarCategoria"
+                class="foro-buscador"
+                placeholder="Buscar una categoría..."
+            >
+
+            <!-- SECCIONES GENERALES -->
+
+            <div class="foro-seccion">
+
+                <h2>Información y comunidad</h2>
+
+                <div class="foro-lista-categorias">
+
+                    <!-- COMUNICADOS -->
+
+                    <a href="categoria.html?id=comunicados"
+                       class="foro-categoria"
+                       data-categoria="comunicados">
+
+                        <span class="categoria-icono">📢</span>
+
+                        <div>
+                            <h3>Comunicados oficiales</h3>
+                            <p>Anuncios, actualizaciones, mantenimiento y eventos.</p>
+                        </div>
+
+                        <span class="categoria-flecha">›</span>
+                    </a>
+
+                    <!-- COMUNIDAD -->
+
+                    <a href="categoria.html?id=comunidad"
+                       class="foro-categoria"
+                       data-categoria="comunidad">
+
+                        <span class="categoria-icono">🌎</span>
+
+                        <div>
+                            <h3>Comunidad general</h3>
+                            <p>Presentaciones, debates, historias y fotografías.</p>
+                        </div>
+
+                        <span class="categoria-flecha">›</span>
+                    </a>
+
+                    <!-- REPORTES -->
+
+                    <a href="categoria.html?id=reportes"
+                       class="foro-categoria"
+                       data-categoria="reportes">
+
+                        <span class="categoria-icono">🛡️</span>
+
+                        <div>
+                            <h3>Reportes y apelaciones</h3>
+                            <p>Reportes de jugadores, sanciones y errores.</p>
+                        </div>
+
+                        <span class="categoria-flecha">›</span>
+                    </a>
+
+                    <!-- SUGERENCIAS -->
+
+                    <a href="categoria.html?id=sugerencias"
+                       class="foro-categoria"
+                       data-categoria="sugerencias">
+
+                        <span class="categoria-icono">💡</span>
+
+                        <div>
+                            <h3>Sugerencias</h3>
+                            <p>Propuestas para mejorar el servidor.</p>
+                        </div>
+
+                        <span class="categoria-flecha">›</span>
+                    </a>
+
+                    <!-- SOPORTE -->
+
+                    <a href="categoria.html?id=soporte"
+                       class="foro-categoria"
+                       data-categoria="soporte">
+
+                        <span class="categoria-icono">🛠️</span>
+
+                        <div>
+                            <h3>Ayuda y soporte</h3>
+                            <p>Guías, preguntas frecuentes y soporte técnico.</p>
+                        </div>
+
+                        <span class="categoria-flecha">›</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- FACCIONES -->
+
+            <div class="foro-seccion">
+
+                <h2>Facciones y organizaciones</h2>
+
+                <div class="foro-lista-categorias">
+
+                    <!-- FACCIONES LEGALES -->
+
+                    <div class="foro-grupo">
+
+                        <button
+                            class="foro-categoria foro-desplegable"
+                            type="button"
+                            aria-expanded="false">
+
+                            <span class="categoria-icono">🛡️</span>
+
+                            <div>
+                                <h3>Facciones legales</h3>
+                                <p>Nuestras gubernamentales</p>
+                            </div>
+
+                            <span class="categoria-flecha">›</span>
+
+                        </button>
+
+                        <div class="foro-subcategorias" hidden>
+
+                            <a href="categoria.html?id=policia"
+                               class="foro-subcategoria">
+                                🚓 Los Santos Police Department (LSPD)
+                            </a>
+
+                            <a href="categoria.html?id=ems"
+                               class="foro-subcategoria">
+                                🚑 San Andreas Emergency Services (SAES)
+                            </a>
+
+                            <a href="categoria.html?id=gobierno"
+                               class="foro-subcategoria">
+                                🏛️ San Andreas Goverment (SAGOV)
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ORGANIZACIONES Y EMPRESAS -->
+
+                    <div class="foro-grupo">
+
+                        <button
+                            class="foro-categoria foro-desplegable"
+                            type="button"
+                            aria-expanded="false">
+
+                            <span class="categoria-icono">🏢</span>
+
+                            <div>
+                                <h3>Organizaciones y empresas</h3>
+                                <p>Negocios, organizaciones y concesionarios.</p>
+                            </div>
+
+                            <span class="categoria-flecha">›</span>
+
+                        </button>
+
+                        <div class="foro-subcategorias" hidden>
+
+                            <a href="categoria.html?id=empresas"
+                               class="foro-subcategoria">
+                                💼 Empresas registradas
+                            </a>
+
+                            <a href="categoria.html?id=organizaciones"
+                               class="foro-subcategoria">
+                                👥 Organizaciones criminales
+                            </a>
+
+                            <a href="categoria.html?id=concesionarios"
+                               class="foro-subcategoria">
+                                🚗 Concesionarios y talleres
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <p id="sinCategorias"
+               class="foro-sin-resultados" hidden>
+                No encontramos categorías con ese nombre.
+            </p>
+
+        </section>
+
+
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* DESPLEGAR FACCIONES */
+
+            document.querySelectorAll(".foro-desplegable")
+                .forEach(boton => {
+
+                    boton.addEventListener("click", () => {
+
+                        const grupo = boton.closest(".foro-grupo");
+                        const contenido = grupo.querySelector(
+                            ".foro-subcategorias"
+                        );
+
+                        const abierto =
+                            boton.getAttribute("aria-expanded") === "true";
+
+                        boton.setAttribute(
+                            "aria-expanded",
+                            String(!abierto)
+                        );
+
+                        grupo.classList.toggle("abierto", !abierto);
+                        contenido.hidden = abierto;
+
+                    });
+                });
+
+            /* BUSCAR CATEGORIAS */
+
+            const buscador = document.getElementById(
+                "buscarCategoria"
+            );
+
+            const elementos = document.querySelectorAll(
+                ".foro-categorias .foro-categoria"
+            );
+
+            const grupos = document.querySelectorAll(
+                ".foro-categorias .foro-grupo"
+            );
+
+            const sinResultados = document.getElementById(
+                "sinCategorias"
+            );
+
+            buscador.addEventListener("input", () => {
+
+                const texto = buscador.value
+                    .toLowerCase()
+                    .trim();
+
+                let encontrados = 0;
+
+                elementos.forEach(elemento => {
+
+                    const coincide = elemento.textContent
+                        .toLowerCase()
+                        .includes(texto);
+
+                    const grupo = elemento.closest(".foro-grupo");
+
+                    if (!grupo) {
+                        elemento.hidden = !coincide;
+                        elemento.style.display =
+                            coincide ? "" : "none";
+
+                        if (coincide) encontrados++;
+                    }
+
+                });
+
+                grupos.forEach(grupo => {
+
+                    const coincide = grupo.textContent
+                        .toLowerCase()
+                        .includes(texto);
+
+                    grupo.style.display =
+                        coincide ? "" : "none";
+
+                    if (coincide) encontrados++;
+
+                });
+
+                sinResultados.hidden = encontrados > 0;
+
+            });
+
+            /* LOGIN DEMOSTRATIVO */
+
+            let conectado = false;
+
+            const botonLogin = document.getElementById(
+                "botonLogin"
+            );
+
+            const usuarioBoton = document.getElementById(
+                "usuarioBoton"
+            );
+
+            const menuUsuario = document.getElementById(
+                "usuarioDesplegable"
+            );
+
+            const botonLogout = document.getElementById(
+                "botonLogout"
+            );
+
+            function actualizarSesion() {
+
+                botonLogin.hidden = conectado;
+                usuarioBoton.hidden = !conectado;
+                menuUsuario.hidden = true;
+
+                usuarioBoton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
+            botonLogin.addEventListener("click", () => {
+                conectado = true;
+                actualizarSesion();
+            });
+
+            usuarioBoton.addEventListener("click", () => {
+
+                menuUsuario.hidden = !menuUsuario.hidden;
+
+                usuarioBoton.setAttribute(
+                    "aria-expanded",
+                    String(!menuUsuario.hidden)
+                );
+            });
+
+            botonLogout.addEventListener("click", () => {
+                conectado = false;
+                actualizarSesion();
+            });
+
+            document.querySelectorAll("[data-pendiente]")
+                .forEach(enlace => {
+
+                    enlace.addEventListener("click", evento => {
+                        evento.preventDefault();
+
+                        alert(
+                            "Esta opción estará disponible próximamente."
+                        );
+                    });
+                });
+
+            actualizarSesion();
+
+        });
+    </script>
+
+</body>
+</html>
