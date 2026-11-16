@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categoría | Euphorya Roleplay</title>
+
+    <link rel="stylesheet" href="foro.css">
+    <link rel="stylesheet" href="categoria.css">
+</head>
+<body>
+
+<header class="foro-header">
+
+    <a href="foro.html" class="foro-logo">
+        <span>EUPHORIA</span>
+        <small>Te damos la bienvenida al foro oficial de Euphoria RP</small>
+    </a>
+
+    <nav class="foro-nav">
+        <a href="index.html">Página principal</a>
+        <a href="foro.html">Foro</a>
+        <a href="foro.html#categorias">Categorías</a>
+    </nav>
+
+</header>
+
+<main class="categoria-contenedor">
+
+    <!-- RUTA -->
+    <div class="categoria-ruta">
+        <a href="foro.html">Foro</a>
+        <span>›</span>
+        <span id="rutaCategoria">Categoría</span>
+    </div>
+
+    <!-- PORTADA -->
+    <section class="categoria-portada">
+
+        <div class="categoria-icono" id="categoriaIcono">
+            🛡️
+        </div>
+
+        <div>
+            <span class="categoria-etiqueta">
+                EUPHORIA
+            </span>
+
+            <h1 id="categoriaTitulo">
+                Cargando categoría...
+            </h1>
+
+            <p id="categoriaDescripcion"></p>
+        </div>
+
+    </section>
+
+    <!-- SUBFOROS -->
+    <section class="categoria-panel">
+
+        <div class="categoria-panel-superior">
+            <div>
+                <h2>Subforos de la categoría</h2>
+                <p>Selecciona una sección para consultar sus publicaciones.</p>
+            </div>
+        </div>
+
+        <div class="categoria-herramientas">
+            <input
+                type="search"
+                id="buscarSubforo"
+                placeholder="Buscar subforo..."
+            >
+        </div>
+
+        <div class="lista-subforos" id="listaSubforos"></div>
+
+        <p class="categoria-vacio" id="mensajeVacio" hidden>
+            No se encontraron subforos.
+        </p>
+
+    </section>
+
+</main>
+
+<script src="datos-foro.js"></script>
+<script src="categoria.js"></script>
+
+</body>
+</html>
