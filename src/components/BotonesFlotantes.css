@@ -1,0 +1,137 @@
+
+/* CONTENEDOR FLOTANTE */
+
+.cv-botones-flotantes {
+  position: fixed;
+  inset: auto 0 24px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* BOTÓN DEL FORO */
+
+.cv-boton-foro {
+  position: fixed;
+  bottom: 28px;
+  left: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 20px 30px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #8e52bc,
+    #a654c9
+  );
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: translateY(25px);
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    background 0.3s ease;
+}
+
+.cv-boton-foro:hover {
+  background: linear-gradient(
+    135deg,
+    #a654c9,
+    #c026d3
+  );
+  transform: translateY(-4px);
+}
+
+/* BOTÓN VOLVER ARRIBA */
+
+.cv-boton-arriba {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #191e26;
+  color: white;
+
+  border: 1px solid #424854;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(25px);
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    background 0.3s ease;
+}
+
+.cv-boton-arriba:hover {
+  background: #292f3a;
+  transform: translateY(-4px);
+}
+
+/* MOSTRAR BOTONES */
+
+.cv-flotantes-visibles .cv-boton-foro,
+.cv-flotantes-visibles .cv-boton-arriba {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 768px) {
+  .cv-boton-foro {
+    left: 12px;
+    bottom: 16px;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+
+  .cv-boton-arriba {
+    right: 12px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .cv-boton-arriba svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-boton-foro,
+  .cv-boton-arriba {
+    transition: none;
+  }
+}

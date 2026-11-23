@@ -1,0 +1,73 @@
+.cvf-foro{max-width:1200px;margin:0 auto;padding:44px 20px 90px;color:#f9f5fc}.cvf-bienvenida{padding:44px;border:1px solid #5b346f;border-radius:20px;background:linear-gradient(120deg,#382048,#17101f)}.cvf-etiqueta{color:#e3a0ff;letter-spacing:3px;font-size:12px;font-weight:800}.cvf-bienvenida h1{font-size:clamp(30px,5vw,48px);margin:12px 0}.cvf-bienvenida p{color:#cdbbd6;line-height:1.7}.cvf-seccion{margin-top:42px}.cvf-seccion h2{font-size:26px;margin-bottom:18px}.cvf-seccion h3{font-size:21px;margin:22px 0}.cvf-buscador{display:block;width:100%;padding:16px;background:#211729;border:1px solid #624175;border-radius:12px;color:#fff;outline:none}.cvf-buscador:focus{border-color:#d66bea}.cvf-cuadricula{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.cvf-grupo{min-width:0}.cvf-categoria{width:100%;min-height:105px;display:flex;align-items:center;gap:17px;padding:21px;border:1px solid #45304f;border-radius:14px;background:#21192b;color:white;text-align:left;text-decoration:none;cursor:pointer;font:inherit;transition:background .2s,border-color .2s}.cvf-categoria:hover{background:#30213c;border-color:#ba63d3}.cvf-icono{font-size:29px;flex-shrink:0}.cvf-info{display:flex;flex-direction:column;gap:7px;min-width:0}.cvf-info strong{font-size:16px}.cvf-info small{font-size:13px;color:#bcaac8;line-height:1.4}.cvf-flecha{margin-left:auto;font-size:26px;color:#d891f2}.cvf-hijos{display:flex;flex-direction:column;gap:8px;padding:12px 0}.cvf-hijo{display:block;padding:15px;border:1px solid #4a3359;border-radius:10px;background:#2b2034;color:#f0def7;text-decoration:none}.cvf-hijo:hover{background:#42304f}.cvf-vacio{margin-top:20px;color:#cdbbd6}@media(max-width:750px){.cvf-cuadricula{grid-template-columns:1fr}.cvf-bienvenida{padding:28px}}
+
+/* CAPITAL V - FLECHAS MODERNAS DEL FORO */
+
+.cvf-flecha-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+
+  background: #432851;
+  border: 1px solid #67417e;
+  border-radius: 50%;
+
+  color: #e5b1ff;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cvf-flecha-circulo svg {
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Al abrir la categoría, gira la flecha */
+[aria-expanded="true"] .cvf-flecha-circulo svg {
+  transform: rotate(180deg);
+}
+
+/* Efecto al pasar el cursor */
+button:hover .cvf-flecha-circulo {
+  background: #58336c;
+  border-color: #b76ad7;
+}
+
+/* FLECHAS MODERNAS - CAPITAL V */
+
+.cvf-flecha-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  background: #432851;
+  border: 1px solid #67417e;
+  border-radius: 50%;
+  color: #e5b1ff;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cvf-flecha-circulo svg {
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.cvf-flecha-circulo svg.girada {
+  transform: rotate(180deg);
+}
+
+.cvf-categoria:hover .cvf-flecha-circulo {
+  background: #58336c;
+  border-color: #b76ad7;
+}

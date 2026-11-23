@@ -1,0 +1,391 @@
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #0c0911;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button, a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.capital-web {
+  min-height: 100vh;
+  background: #0c0911;
+}
+
+.capital-header {
+  min-height: 90px;
+  padding: 15px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(14, 9, 20, 0.96);
+  border-bottom: 1px solid #42204f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.capital-marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.capital-marca img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.capital-marca div {
+  display: flex;
+  flex-direction: column;
+}
+
+.capital-marca strong {
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+.capital-marca span {
+  font-size: 10px;
+  color: #df93ff;
+  letter-spacing: 4px;
+}
+
+.capital-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.capital-nav a {
+  color: #d4c7dd;
+  font-size: 14px;
+  transition: color .2s;
+}
+
+.capital-nav a:hover {
+  color: #e68cff;
+}
+
+.capital-login,
+.capital-boton.principal {
+  background: linear-gradient(120deg, #8b22bc, #d12ac7);
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.capital-login {
+  padding: 13px 21px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.capital-menu-boton {
+  display: none;
+}
+
+.capital-hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 75px 20px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 35%, #401453 0%, transparent 55%),
+    linear-gradient(180deg, #150a20, #0c0911);
+}
+
+.capital-brillo {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: #9c20bf;
+  opacity: .14;
+  filter: blur(130px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.capital-hero-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.capital-logo-grande {
+  width: min(280px, 65vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 35px rgba(196, 36, 255, .28));
+}
+
+.capital-etiqueta {
+  margin-top: 22px;
+  color: #e5a2ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.capital-hero h1 {
+  font-size: clamp(32px, 5vw, 59px);
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+.capital-hero h1 span {
+  color: #e28aff;
+}
+
+.capital-descripcion {
+  color: #c3b7cd;
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.capital-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.capital-boton {
+  display: inline-block;
+  padding: 15px 26px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform .2s;
+}
+
+.capital-boton:hover {
+  transform: translateY(-3px);
+}
+
+.capital-boton.secundario {
+  background: #24152e;
+  border: 1px solid #79468e;
+}
+
+.capital-secciones {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 95px 24px;
+  text-align: center;
+}
+
+.capital-secciones h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.capital-secciones > p {
+  color: #a99ab3;
+}
+
+.capital-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.capital-tarjeta {
+  padding: 35px 28px;
+  background: #1b1323;
+  border: 1px solid #3d294b;
+  border-radius: 17px;
+  text-align: left;
+}
+
+.capital-icono {
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.capital-tarjeta h3 {
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.capital-tarjeta p {
+  color: #b7a9c2;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.capital-tarjeta span {
+  display: block;
+  margin-top: 22px;
+  color: #df93ff;
+  font-size: 12px;
+}
+
+.capital-footer {
+  padding: 35px 20px;
+  text-align: center;
+  background: #100b16;
+  border-top: 1px solid #392544;
+  color: #a99ab3;
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .capital-header {
+    flex-wrap: wrap;
+  }
+
+  .capital-menu-boton {
+    display: block;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid #75458e;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .capital-nav {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .capital-nav.abierto {
+    display: flex;
+  }
+
+  .capital-nav a {
+    padding: 13px 5px;
+  }
+
+  .capital-login {
+    order: 2;
+  }
+
+  .capital-tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .capital-marca strong {
+    font-size: 16px;
+  }
+
+  .capital-marca img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .capital-login {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+.capital-usuario {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.capital-usuario button {
+  padding: 11px 16px;
+  background: #342044;
+  border: 1px solid #8b52bc;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.capital-usuario button:hover {
+  background: #56306d;
+}
+/* ===================================
+   CAPITAL V - USUARIO CONECTADO
+=================================== */
+
+.capital-usuario {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.capital-usuario span {
+  color: #e5b7ff;
+  font-weight: bold;
+}
+
+.capital-usuario button {
+  padding: 11px 16px;
+  background: #342044;
+  border: 1px solid #8b52bc;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.capital-usuario button:hover {
+  background: #56306d;
+}
+
+.login-mensaje {
+  margin-top: 15px;
+  text-align: center;
+  color: #dca0ff;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.login-ayuda {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #c6b2d3;
+  line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+  .capital-usuario {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

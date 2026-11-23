@@ -1,0 +1,178 @@
+
+/* ===================================
+   CAPITAL V - MENÚ DE USUARIO
+=================================== */
+
+.menu-usuario {
+  position: relative;
+  z-index: 200;
+}
+
+.menu-usuario-boton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 10px;
+  background: #291832;
+  border: 1px solid #654076;
+  border-radius: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.menu-usuario-boton:hover,
+.menu-usuario-boton.activo {
+  background: #382047;
+  border-color: #b76ad7;
+  box-shadow: 0 0 18px rgba(190, 57, 221, 0.15);
+}
+
+.menu-usuario-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b22bc, #d12ac7);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.menu-usuario-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 80px;
+}
+
+.menu-usuario-datos strong {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+
+.menu-usuario-datos small {
+  font-size: 11px;
+  color: #cda4df;
+}
+
+.menu-usuario-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  background: #432851;
+  border: 1px solid #67417e;
+  border-radius: 50%;
+  color: #e5b1ff;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-usuario-boton:hover .menu-usuario-icono {
+  background: #58336c;
+  border-color: #b76ad7;
+}
+
+.menu-usuario-icono svg {
+  transition: transform 0.25s ease;
+}
+
+.menu-usuario-icono svg.girado {
+  transform: rotate(180deg);
+}
+
+/* MENÚ DESPLEGABLE */
+
+.menu-usuario-desplegable {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 260px;
+  padding: 10px;
+  background: #21152c;
+  border: 1px solid #67417e;
+  border-radius: 13px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  animation: aparecerMenu 0.2s ease;
+}
+
+@keyframes aparecerMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-usuario-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+}
+
+.menu-usuario-info strong {
+  color: white;
+  font-size: 14px;
+}
+
+.menu-usuario-info small {
+  color: #cba5e2;
+  font-size: 12px;
+}
+
+.menu-usuario-desplegable button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  color: #eee2f5;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.menu-usuario-desplegable button:hover {
+  background: #3a264b;
+}
+
+.menu-usuario-separador {
+  height: 1px;
+  margin: 7px 0;
+  background: #50345f;
+}
+
+.menu-usuario-desplegable .menu-usuario-salir {
+  color: #ff9eae;
+}
+
+@media (max-width: 480px) {
+  .menu-usuario-desplegable {
+    width: min(260px, 90vw);
+  }
+
+  .menu-usuario-datos strong {
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

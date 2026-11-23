@@ -1,0 +1,41 @@
+
+/* CAPITAL V - ESTILOS DEL FORO */
+
+/* Flechas modernas, iguales al menú de usuario */
+
+.cvf-flecha-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+
+  background: #432851;
+  border: 1px solid #67417e;
+  border-radius: 50%;
+
+  color: #e5b1ff;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cvf-flecha-circulo svg {
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Animación al abrir */
+[aria-expanded="true"] .cvf-flecha-circulo svg {
+  transform: rotate(180deg);
+}
+
+/* Efecto al pasar el cursor */
+button:hover .cvf-flecha-circulo {
+  background: #58336c;
+  border-color: #b76ad7;
+}

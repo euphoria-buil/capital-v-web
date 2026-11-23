@@ -1,0 +1,1008 @@
+
+
+/* =====================================
+   EUPHORYA ROLEPLAY - TIENDA
+===================================== */
+
+
+
+.cv-tienda-page {
+    --fondo: #0e0d13;
+    --tarjeta: #1c1724;
+    --morado: #8e52bc;
+    --morado-claro: #c89af5;
+    --texto: #ffffff;
+    --secundario: #b6aabe;
+    --cobre: #cd7f32;
+    --oro: #ffd700;
+    --diamante: #7ddfff;
+}
+
+
+
+.cv-tienda-page, .cv-tienda-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.cv-tienda-page {
+    scroll-behavior: smooth;
+}
+
+
+
+.cv-tienda-page {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.cv-tienda-page button, .cv-tienda-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+.cv-tienda-page button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+
+.cv-tienda-page a {
+    text-decoration: none;
+}
+
+
+
+/* =====================================
+   NAVEGACIÓN
+===================================== */
+
+
+
+.cv-tienda-page .header {
+    min-height: 85px;
+    padding: 20px 5%;
+    background: #17121e;
+    border-bottom: 1px solid #352641;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+.cv-tienda-page .logo {
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: white;
+}
+
+
+
+.cv-tienda-page .logo span {
+    color: var(--morado-claro);
+}
+
+
+
+.cv-tienda-page .navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+
+.cv-tienda-page .navegacion a {
+    color: #e8dfef;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color .2s;
+}
+
+
+
+.cv-tienda-page .navegacion a:hover, .cv-tienda-page .navegacion a.activo {
+    color: var(--morado-claro);
+}
+
+
+
+.cv-tienda-page .boton-cuenta {
+    background: #e9bb52;
+    color: #161018;
+    border: 0;
+    padding: 12px 19px;
+    border-radius: 9px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+
+/* =====================================
+   PORTADA
+===================================== */
+
+
+
+.cv-tienda-page .hero {
+    padding: 110px 20px 105px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at 50% 15%,
+            rgba(142,82,188,.25),
+            transparent 65%
+        ),
+        #100d16;
+}
+
+
+
+.cv-tienda-page .etiqueta {
+    color: var(--morado-claro);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+.cv-tienda-page .hero h1 {
+    font-size: clamp(36px, 6vw, 66px);
+    margin: 18px 0;
+    letter-spacing: 2px;
+}
+
+
+
+.cv-tienda-page .hero h1 span {
+    color: var(--morado-claro);
+}
+
+
+
+.cv-tienda-page .hero p {
+    max-width: 580px;
+    margin: 0 auto 30px;
+    color: var(--secundario);
+    line-height: 1.8;
+}
+
+
+
+.cv-tienda-page .boton-explorar {
+    display: inline-block;
+    padding: 15px 28px;
+    background: var(--morado);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: transform .2s, background .2s;
+}
+
+
+
+.cv-tienda-page .boton-explorar:hover {
+    background: #a96ed1;
+    transform: translateY(-3px);
+}
+
+
+
+/* =====================================
+   SECCIONES
+===================================== */
+
+
+
+.cv-tienda-page .seccion-tienda, .cv-tienda-page .seccion-monedas {
+    max-width: 1250px;
+    margin: auto;
+    padding: 85px 25px;
+}
+
+
+
+.cv-tienda-page .titulo-seccion {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+
+.cv-tienda-page .titulo-seccion > span {
+    color: var(--morado-claro);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+.cv-tienda-page .titulo-seccion h2 {
+    font-size: clamp(27px, 4vw, 39px);
+    margin: 12px 0;
+}
+
+
+
+.cv-tienda-page .titulo-seccion p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--secundario);
+    line-height: 1.7;
+}
+
+
+
+/* =====================================
+   TARJETAS VIP
+===================================== */
+
+
+
+.cv-tienda-page .contenedor-planes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+
+
+.cv-tienda-page .tarjeta-plan {
+    position: relative;
+    min-width: 0;
+    padding: 32px 25px;
+    background: var(--tarjeta);
+    border: 1px solid #42324e;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+}
+
+
+
+.cv-tienda-page .tarjeta-plan:hover {
+    transform: translateY(-7px);
+}
+
+
+
+.cv-tienda-page .tarjeta-plan.cobre {
+    border-color: var(--cobre);
+}
+
+
+
+.cv-tienda-page .tarjeta-plan.oro {
+    border-color: var(--oro);
+}
+
+
+
+.cv-tienda-page .tarjeta-plan.diamante {
+    border-color: var(--diamante);
+}
+
+
+
+.cv-tienda-page .cobre:hover {
+    box-shadow: 0 12px 35px #cd7f3228;
+}
+
+
+
+.cv-tienda-page .oro:hover {
+    box-shadow: 0 12px 35px #ffd70025;
+}
+
+
+
+.cv-tienda-page .diamante:hover {
+    box-shadow: 0 12px 35px #7ddfff25;
+}
+
+
+
+.cv-tienda-page .icono-plan {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #30263b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    margin-bottom: 22px;
+}
+
+
+
+.cv-tienda-page .tarjeta-plan h3 {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+
+
+.cv-tienda-page .cobre h3 {
+    color: var(--cobre);
+}
+
+
+
+.cv-tienda-page .oro h3 {
+    color: var(--oro);
+}
+
+
+
+.cv-tienda-page .diamante h3 {
+    color: var(--diamante);
+}
+
+
+
+.cv-tienda-page .subtitulo-plan {
+    color: var(--secundario);
+    font-size: 13px;
+    margin-top: 10px;
+    min-height: 34px;
+}
+
+
+
+.cv-tienda-page .etiqueta-popular {
+    position: absolute;
+    top: -13px;
+    background: #d5ab36;
+    color: #18111c;
+    border-radius: 20px;
+    padding: 7px 18px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+
+/* =====================================
+   SELECTOR DE DURACIÓN
+===================================== */
+
+
+
+.cv-tienda-page .selector-duracion {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    background: #100e16;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 25px;
+}
+
+
+
+.cv-tienda-page .duracion {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 5px;
+    color: #bfb3ca;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+
+.cv-tienda-page .duracion.activo {
+    background: var(--morado);
+    color: white;
+}
+
+
+
+.cv-tienda-page .precio {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin: 28px 0;
+}
+
+
+
+.cv-tienda-page .precio .simbolo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+
+.cv-tienda-page .precio strong {
+    font-size: 44px;
+}
+
+
+
+.cv-tienda-page .precio small {
+    color: var(--secundario);
+    font-size: 11px;
+}
+
+
+
+/* =====================================
+   BENEFICIOS
+===================================== */
+
+
+
+.cv-tienda-page .beneficios {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+
+
+.cv-tienda-page .beneficios li {
+    position: relative;
+    padding: 13px 0 13px 24px;
+    border-bottom: 1px solid #352b3d;
+    font-size: 13px;
+    color: #e1d9e8;
+    line-height: 1.5;
+}
+
+
+
+.cv-tienda-page .beneficios li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #b98ade;
+    font-weight: bold;
+}
+
+
+
+.cv-tienda-page .comprar {
+    width: 100%;
+    margin-top: auto;
+    padding: 15px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--morado);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background .2s;
+}
+
+
+
+.cv-tienda-page .comprar:hover {
+    background: #a96ed1;
+}
+
+
+
+.cv-tienda-page .aviso-productos {
+    max-width: 800px;
+    text-align: center;
+    margin: 35px auto 0;
+    font-size: 12px;
+    color: #94899f;
+    line-height: 1.7;
+}
+
+
+
+/* =====================================
+   MONEDAS DEL JUEGO
+===================================== */
+
+
+
+.cv-tienda-page .seccion-monedas {
+    border-top: 1px solid #30253a;
+}
+
+
+
+.cv-tienda-page .contenedor-monedas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+
+.cv-tienda-page .tarjeta-moneda {
+    background: #1c1724;
+    border: 1px solid #50375f;
+    border-radius: 17px;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+
+
+.cv-tienda-page .moneda-icono {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+
+
+.cv-tienda-page .tarjeta-moneda h3 {
+    color: var(--morado-claro);
+    font-size: 32px;
+}
+
+
+
+.cv-tienda-page .tarjeta-moneda p {
+    color: #c9bfd1;
+    margin: 10px 0 20px;
+}
+
+
+
+.cv-tienda-page .tarjeta-moneda > span {
+    display: inline-block;
+    background: #30223d;
+    color: #d8b6f1;
+    padding: 9px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
+
+
+
+.cv-tienda-page .footer {
+    padding: 45px 20px;
+    background: #110e16;
+    border-top: 1px solid #34283f;
+    text-align: center;
+}
+
+
+
+.cv-tienda-page .footer h3 {
+    color: var(--morado-claro);
+    letter-spacing: 2px;
+}
+
+
+
+.cv-tienda-page .footer p {
+    color: var(--secundario);
+    margin: 12px 0;
+}
+
+
+
+.cv-tienda-page .footer small {
+    color: #8f849a;
+}
+
+
+
+/* =====================================
+   MODAL DE INICIO DE SESIÓN
+===================================== */
+
+
+
+.cv-tienda-page .modal-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .78);
+    backdrop-filter: blur(8px);
+}
+
+
+
+.cv-tienda-page .modal-fondo.visible {
+    display: flex;
+}
+
+
+
+.cv-tienda-page .modal-login {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    background: #201827;
+    border: 1px solid #78529a;
+    border-radius: 22px;
+    padding: 42px 30px 32px;
+    text-align: center;
+    box-shadow: 0 20px 70px #0008;
+}
+
+
+
+.cv-tienda-page .cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    background: transparent;
+    border: none;
+    color: #c8b9d2;
+    font-size: 29px;
+}
+
+
+
+.cv-tienda-page .modal-icono {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+
+
+.cv-tienda-page .modal-login h2 {
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+
+
+.cv-tienda-page .modal-login p {
+    color: #c2b5cc;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+
+.cv-tienda-page .boton-login, .cv-tienda-page .boton-visitante {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+
+
+.cv-tienda-page .boton-login {
+    background: var(--morado);
+    color: white;
+    border: 0;
+}
+
+
+
+.cv-tienda-page .boton-visitante {
+    background: transparent;
+    color: white;
+    border: 1px solid #74588a;
+}
+
+
+
+.cv-tienda-page .modal-login small {
+    display: block;
+    margin-top: 12px;
+    color: #a89ab2;
+    line-height: 1.6;
+}
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+
+
+@media  (max-width: 1000px)  {
+    
+.cv-tienda-page .header {
+        flex-direction: column;
+    }
+
+
+    
+.cv-tienda-page .contenedor-planes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    
+.cv-tienda-page .tarjeta-plan.diamante {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        width: 100%;
+        justify-self: center;
+    }
+
+}
+
+
+
+@media  (max-width: 650px)  {
+    
+.cv-tienda-page .header {
+        padding: 22px 15px;
+    }
+
+
+    
+.cv-tienda-page .navegacion {
+        gap: 14px;
+    }
+
+
+    
+.cv-tienda-page .navegacion a {
+        font-size: 12px;
+    }
+
+
+    
+.cv-tienda-page .hero {
+        padding: 75px 18px;
+    }
+
+
+    
+.cv-tienda-page .seccion-tienda, .cv-tienda-page .seccion-monedas {
+        padding: 60px 15px;
+    }
+
+
+    
+.cv-tienda-page .contenedor-planes, .cv-tienda-page .contenedor-monedas {
+        grid-template-columns: 1fr;
+    }
+
+
+    
+.cv-tienda-page .tarjeta-plan.diamante {
+        grid-column: auto;
+        max-width: none;
+    }
+
+
+    
+.cv-tienda-page .precio strong {
+        font-size: 39px;
+    }
+
+
+    
+.cv-tienda-page .modal-login {
+        padding: 38px 22px 25px;
+    }
+
+}
+
+
+
+/* =====================================
+   EUPHORYA - LOGIN Y REGISTRO
+===================================== */
+
+
+
+.cv-tienda-page .modal-acceso {
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+
+.cv-tienda-page .campo-acceso {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+
+
+.cv-tienda-page .campo-acceso label {
+    display: block;
+    margin-bottom: 9px;
+    color: #e4d6ed;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+.cv-tienda-page .campo-acceso input {
+    width: 100%;
+    padding: 14px 15px;
+    background: #17111d;
+    border: 1px solid #554061;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color .2s;
+}
+
+
+
+.cv-tienda-page .campo-acceso input:focus {
+    border-color: #c89af5;
+}
+
+
+
+.cv-tienda-page .campo-acceso input::placeholder {
+    color: #85768e;
+}
+
+
+
+.cv-tienda-page .modal-acceso form {
+    margin-top: 22px;
+}
+
+
+
+.cv-tienda-page .modal-acceso .boton-login {
+    margin-top: 8px;
+}
+
+
+
+.cv-tienda-page .enlace-acceso {
+    display: block;
+    margin: 12px auto;
+    background: none;
+    border: none;
+    color: #c89af5;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+
+.cv-tienda-page .enlace-acceso:hover {
+    text-decoration: underline;
+}
+
+
+
+.cv-tienda-page .separador-acceso {
+    height: 1px;
+    background: #45334f;
+    margin: 24px 0;
+}
+
+
+
+.cv-tienda-page .texto-registro {
+    margin-bottom: 12px !important;
+}
+
+
+
+.cv-tienda-page .mensaje-acceso {
+    min-height: 20px;
+    margin-top: 14px !important;
+    font-size: 13px !important;
+    color: #e4b6ff !important;
+}
+
+
+
+@media  (max-width: 600px)  {
+    
+.cv-tienda-page .modal-acceso {
+        padding: 35px 20px 25px;
+    }
+
+}
+
+
+
+/* =====================================
+   REQUISITOS DE CONTRASEÑA
+===================================== */
+
+
+
+.cv-tienda-page .requisitos-password {
+    margin-top: 12px;
+    padding: 16px;
+    background: #17111d;
+    border: 1px solid #483653;
+    border-radius: 12px;
+}
+
+
+
+.cv-tienda-page .requisitos-titulo {
+    color: #c89af5 !important;
+    font-size: 12px !important;
+    font-weight: 700;
+    margin-bottom: 14px !important;
+    line-height: 1.5;
+}
+
+
+
+.cv-tienda-page .requisito {
+    color: #f08080;
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    transition: color .2s ease;
+}
+
+
+
+.cv-tienda-page .requisito.valido {
+    color: #69d89a;
+}
+
+
+
+.cv-tienda-page .estado-password {
+    margin: 12px 0 0 !important;
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+
+
+.cv-tienda-page .estado-password.correcto {
+    color: #69d89a !important;
+}
+
+
+
+.cv-tienda-page .estado-password.incorrecto {
+    color: #f08080 !important;
+}
+
+
+/* Solo se aplica a la página Tienda: no modifica Inicio, Foro ni el encabezado global. */
+.cv-tienda-page { min-height: 100vh; background: #0e0d13; color: #fff; font-family: Arial, Helvetica, sans-serif; }
+.cv-tienda-page .cv-tienda-contenido { width: 100%; }
+.cv-tienda-page .cv-tienda-aviso-fondo { position:fixed; inset:0; z-index:10000; background:#000b; display:flex; align-items:center; justify-content:center; padding:20px; }
+.cv-tienda-page .cv-tienda-aviso { max-width:430px; width:100%; padding:32px; border-radius:20px; background:#201827; border:1px solid #78529a; text-align:center; }
+.cv-tienda-page .cv-tienda-aviso p { margin:18px 0; line-height:1.6; color:#c2b5cc; }
+.cv-tienda-page .cv-tienda-aviso button { padding:12px 24px; background:#8e52bc; color:white; border:0; border-radius:9px; }
