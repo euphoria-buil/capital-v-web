@@ -1,16 +1,30 @@
-# React + Vite
+# Capital V web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio público (React + Vite). En producción se sirve desde Docker (nginx) detrás del nginx del host con TLS.
 
-Currently, two official plugins are available:
+## Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npm run dev
+```
 
-## React Compiler
+## Docker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+docker compose up -d --build
+# local: http://127.0.0.1:8088
+```
 
-## Expanding the ESLint configuration
+El contenedor solo escucha en loopback. El nginx del host hace HTTPS en `capitalv.me` / `www.capitalv.me`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## VPS
+
+```bash
+git clone https://github.com/euphoria-buil/capital-v-web.git /opt/capital-v-web
+cd /opt/capital-v-web
+chmod +x deploy/deploy-vps.sh
+./deploy/deploy-vps.sh
+```
+
+DNS A de `capitalv.me` y `www.capitalv.me` debe apuntar a la VPS antes de Certbot.

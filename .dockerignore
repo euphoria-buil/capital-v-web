@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.gitignore
+*.md
+.vscode
+.idea
+deploy/deploy-vps.sh
+deploy/nginx.host.conf
